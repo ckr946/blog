@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"kairong6.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
+  </script>
+
+  <meta name="description" content="sql重点语法               sql练习（表见附件）第一阶段查询所有员工的年薪((月薪 + 奖金) * 12) 1SELECT ENAME,(ifnull(comm,0)+sal)*12 from emp;  查询有奖金的员工信息 1SELECT ISNULL(COMM),ENAME from emp;  查询公司的老板 1SELECT DEPTNO,MGR from emp;  查">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql">
+<meta property="og:url" content="https://kairong6.gitee.io/2022/03/12/mysql/index.html">
+<meta property="og:site_name" content="ckrの博客">
+<meta property="og:description" content="sql重点语法               sql练习（表见附件）第一阶段查询所有员工的年薪((月薪 + 奖金) * 12) 1SELECT ENAME,(ifnull(comm,0)+sal)*12 from emp;  查询有奖金的员工信息 1SELECT ISNULL(COMM),ENAME from emp;  查询公司的老板 1SELECT DEPTNO,MGR from emp;  查">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/kairong6/hexo_img/raw/master/20220312144408.png">
+<meta property="og:image" content="https://gitee.com/kairong6/hexo_img/raw/master/20220312144439.png">
+<meta property="og:image" content="https://gitee.com/kairong6/hexo_img/raw/master/20220312144458.png">
+<meta property="og:image" content="https://gitee.com/kairong6/hexo_img/raw/master/20220312193934.png">
+<meta property="og:image" content="https://gitee.com/kairong6/hexo_img/raw/master/20220312193956.png">
+<meta property="og:image" content="https://gitee.com/kairong6/hexo_img/raw/master/20220312194013.png">
+<meta property="og:image" content="https://gitee.com/kairong6/hexo_img/raw/master/20220312194030.png">
+<meta property="og:image" content="https://gitee.com/kairong6/hexo_img/raw/master/20220312194102.png">
+<meta property="og:image" content="https://gitee.com/kairong6/hexo_img/raw/master/20220312194150.png">
+<meta property="og:image" content="https://gitee.com/kairong6/hexo_img/raw/master/20220312194211.png">
+<meta property="og:image" content="https://gitee.com/kairong6/hexo_img/raw/master/20220312194234.png">
+<meta property="og:image" content="https://gitee.com/kairong6/hexo_img/raw/master/20220312194253.png">
+<meta property="og:image" content="https://gitee.com/kairong6/hexo_img/raw/master/20220312194322.png">
+<meta property="og:image" content="https://gitee.com/kairong6/hexo_img/raw/master/20220312194336.png">
+<meta property="og:image" content="https://gitee.com/kairong6/hexo_img/raw/master/20220312194351.png">
+<meta property="article:published_time" content="2022-03-12T11:50:05.000Z">
+<meta property="article:modified_time" content="2022-03-12T11:53:09.084Z">
+<meta property="article:author" content="Kairong">
+<meta property="article:tag" content="mysql">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/kairong6/hexo_img/raw/master/20220312144408.png">
+
+<link rel="canonical" href="https://kairong6.gitee.io/2022/03/12/mysql/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>mysql | ckrの博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">ckrの博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">记录代码生活</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">7</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">10</span></a>
+
+  </li>
+        <li class="menu-item menu-item-favorite">
+
+    <a href="/favorite/" rel="section"><i class="fa fa-star fa-fw"></i>收藏夹</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://kairong6.gitee.io/2022/03/12/mysql/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/ckr.png">
+      <meta itemprop="name" content="Kairong">
+      <meta itemprop="description" content="若想得到未得到的东西，必先做从未做过的事">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ckrの博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          mysql
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-03-12 19:50:05 / 修改时间：19:53:09" itemprop="dateCreated datePublished" datetime="2022-03-12T19:50:05+08:00">2022-03-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/mysql%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">mysql基础</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="sql重点语法"><a href="#sql重点语法" class="headerlink" title="sql重点语法"></a>sql重点语法</h2><p><img src="https://gitee.com/kairong6/hexo_img/raw/master/20220312144408.png" alt="image-20220312144408615"></p>
+<p><img src="https://gitee.com/kairong6/hexo_img/raw/master/20220312144439.png" alt="image-20220312144439088"></p>
+<p><img src="https://gitee.com/kairong6/hexo_img/raw/master/20220312144458.png" alt="image-20220312144458541"></p>
+<p><img src="https://gitee.com/kairong6/hexo_img/raw/master/20220312193934.png" alt="image-20220312193934858"></p>
+<p><img src="https://gitee.com/kairong6/hexo_img/raw/master/20220312193956.png" alt="image-20220312193956122"></p>
+<p><img src="https://gitee.com/kairong6/hexo_img/raw/master/20220312194013.png" alt="image-20220312194013669"></p>
+<p><img src="https://gitee.com/kairong6/hexo_img/raw/master/20220312194030.png" alt="image-20220312194030874"></p>
+<p><img src="https://gitee.com/kairong6/hexo_img/raw/master/20220312194102.png" alt="image-20220312194102632"></p>
+<p><img src="https://gitee.com/kairong6/hexo_img/raw/master/20220312194150.png" alt="image-20220312194150450"></p>
+<p><img src="https://gitee.com/kairong6/hexo_img/raw/master/20220312194211.png" alt="image-20220312194211843"></p>
+<p><img src="https://gitee.com/kairong6/hexo_img/raw/master/20220312194234.png" alt="image-20220312194234274"></p>
+<p><img src="https://gitee.com/kairong6/hexo_img/raw/master/20220312194253.png" alt="image-20220312194253202"></p>
+<p><img src="https://gitee.com/kairong6/hexo_img/raw/master/20220312194322.png" alt="image-20220312194322319"></p>
+<p><img src="https://gitee.com/kairong6/hexo_img/raw/master/20220312194336.png" alt="image-20220312194336819"></p>
+<p><img src="https://gitee.com/kairong6/hexo_img/raw/master/20220312194351.png" alt="image-20220312194351814"></p>
+<h2 id="sql练习（表见附件）"><a href="#sql练习（表见附件）" class="headerlink" title="sql练习（表见附件）"></a>sql练习（表见附件）</h2><h3 id="第一阶段"><a href="#第一阶段" class="headerlink" title="第一阶段"></a>第一阶段</h3><p>查询所有员工的年薪((月薪 + 奖金) * 12)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ENAME,(ifnull(comm,<span class="number">0</span>)<span class="operator">+</span>sal)<span class="operator">*</span><span class="number">12</span> <span class="keyword">from</span> emp;</span><br></pre></td></tr></table></figure>
+
+<p>查询有奖金的员工信息</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ISNULL(COMM),ENAME <span class="keyword">from</span> emp;</span><br></pre></td></tr></table></figure>
+
+<p>查询公司的老板</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> DEPTNO,MGR <span class="keyword">from</span> emp;</span><br></pre></td></tr></table></figure>
+
+<p>查询出基本工资高于 1500 的所有员工信息</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ENAME,sal <span class="keyword">from</span> emp <span class="keyword">WHERE</span> sal<span class="operator">&gt;=</span><span class="number">1500</span>;</span><br></pre></td></tr></table></figure>
+
+<p>查询名字叫 SCOTT 的员工所从事的工作</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ENAME,JOB <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> ENAME<span class="operator">=</span> &quot;SCOTT&quot;;</span><br></pre></td></tr></table></figure>
+
+<p>查询 1981 年入职的员工信息</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> EMP <span class="keyword">WHERE</span> HIREDATE <span class="keyword">like</span> <span class="string">&#x27;1981-__-__&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>查询年薪小于 3W 的员工</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ENAME,(ifnull(comm,<span class="number">0</span>)<span class="operator">+</span>sal)<span class="operator">*</span><span class="number">12</span> <span class="keyword">from</span> emp <span class="keyword">WHERE</span> (ifnull(comm,<span class="number">0</span>)<span class="operator">+</span>sal)<span class="operator">*</span><span class="number">12</span><span class="operator">&lt;=</span><span class="number">30000</span>;</span><br></pre></td></tr></table></figure>
+
+<p>查询所有不是销售人员的员工信息</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ENAME,JOB <span class="keyword">from</span> emp <span class="keyword">WHERE</span> job <span class="operator">!=</span> &quot;CLERK&quot;;</span><br></pre></td></tr></table></figure>
+
+<p>查询工资在 2000-3000 之间的员工信息</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ENAME,sal <span class="keyword">from</span> emp <span class="keyword">WHERE</span> sal <span class="keyword">BETWEEN</span> <span class="number">2000</span> <span class="keyword">and</span> <span class="number">3000</span>;</span><br></pre></td></tr></table></figure>
+
+<p>查询 1981 年入职的员工</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ENAME,HIREDATE <span class="keyword">FROM</span> EMP <span class="keyword">WHERE</span> HIREDATE <span class="keyword">like</span> &quot;1981-__-__&quot;;</span><br></pre></td></tr></table></figure>
+
+<p>查询工资为 800 或 1600 或 3000 的员工</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ENAME,sal <span class="keyword">from</span> emp <span class="keyword">WHERE</span> sal <span class="operator">=</span><span class="number">800</span> <span class="keyword">OR</span> sal<span class="operator">=</span> <span class="number">1600</span> <span class="keyword">or</span> sal<span class="operator">=</span> <span class="number">3000</span>;</span><br></pre></td></tr></table></figure>
+
+<p>查询出所有雇员姓名是以 A 开头的全部雇员信息。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">WHERE</span> ENAME <span class="keyword">like</span> &quot;A%&quot;; </span><br></pre></td></tr></table></figure>
+
+<p>查询出雇员姓名第二个字母是 M 的全部雇员信息。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">WHERE</span> ENAME <span class="keyword">like</span> &quot;_M%&quot;;</span><br></pre></td></tr></table></figure>
+
+<p>查询出雇员姓名任意位置上包含字母 A 的全部雇员信息。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">WHERE</span> ENAME <span class="keyword">like</span> &quot;%A%&quot;;</span><br></pre></td></tr></table></figure>
+
+<p>查询姓名中有 e 或者 a 的员工姓名</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">WHERE</span> ENAME <span class="keyword">like</span>&quot;%e%&quot; <span class="keyword">or</span> ENAME <span class="keyword">like</span> <span class="string">&#x27;%a%&#x27;</span>; </span><br></pre></td></tr></table></figure>
+
+<p>查询工资在 1500~3000 之间的全部员工信息</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> sal <span class="keyword">BETWEEN</span> <span class="number">1500</span> <span class="keyword">and</span> <span class="number">3000</span>;</span><br></pre></td></tr></table></figure>
+
+<p>查询工资不在 2000-3000 之间的员工信息</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> sal <span class="operator">&lt;</span><span class="number">2000</span> <span class="keyword">or</span> sal <span class="operator">&gt;</span><span class="number">3000</span>;</span><br></pre></td></tr></table></figure>
+
+<p>查询工资不为 800 或 1600 或 3000 的员工</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> sal <span class="operator">!=</span><span class="number">800</span> <span class="keyword">or</span> sal <span class="operator">!=</span><span class="number">1600</span> <span class="keyword">or</span> sal <span class="operator">!=</span><span class="number">3000</span>;</span><br></pre></td></tr></table></figure>
+
+<p>查询出职位是办事员 (CLERK) 或者是销售人员 (SALESMAN) 的全部信息，且工资在 1000 以上</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> SAL<span class="operator">&gt;</span><span class="number">1000</span> <span class="keyword">and</span> job <span class="operator">=</span> <span class="string">&#x27;CLERK&#x27;</span> <span class="keyword">OR</span> JOB <span class="operator">=</span> <span class="string">&#x27;SALESMAN&#x27;</span> <span class="keyword">AND</span> SAL<span class="operator">&gt;</span><span class="number">1000</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="第二阶段"><a href="#第二阶段" class="headerlink" title="第二阶段"></a>第二阶段</h3><p>查询员工编号，员工名称，员工所属部门的编号和名称<br>#隐式内连接</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> e.empno , e.ename, d.deptno,d.dname <span class="keyword">from</span> emp <span class="keyword">as</span> e, dept <span class="keyword">as</span> d <span class="keyword">where</span> e.deptno <span class="operator">=</span> d.deptno</span><br></pre></td></tr></table></figure>
+
+<p>#显式内连接</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> e.empno,e.ename,d.deptno,d.dname <span class="keyword">from</span> emp <span class="keyword">as</span> e <span class="keyword">inner</span> <span class="keyword">join</span> dept <span class="keyword">as</span> d <span class="keyword">on</span> e.deptno <span class="operator">=</span> d.deptno</span><br></pre></td></tr></table></figure>
+
+<p>查询员工的姓名，工资，所在部门的名称，以及工资的等级<br>#隐式内连接</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> e.ename,e.sal,d.dname,s.grade <span class="keyword">from</span> emp <span class="keyword">as</span> e,dept <span class="keyword">as</span> d,salgrade <span class="keyword">as</span> s <span class="keyword">where</span> e.deptno<span class="operator">=</span>d.deptno <span class="keyword">and</span> e.sal <span class="keyword">between</span> s.losal <span class="keyword">and</span> s.hisal</span><br></pre></td></tr></table></figure>
+
+<p>#显式内连接</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> e.ename,e.sal,d.dname,s.grade <span class="keyword">from</span> emp <span class="keyword">as</span> e <span class="keyword">inner</span> <span class="keyword">join</span> dept <span class="keyword">as</span> d <span class="keyword">on</span> e.deptno<span class="operator">=</span>d.deptno <span class="keyword">inner</span> <span class="keyword">join</span> salgrade <span class="keyword">as</span> s <span class="keyword">on</span> e.sal <span class="keyword">between</span> s.losal <span class="keyword">and</span> s.hisal </span><br></pre></td></tr></table></figure>
+
+<p>#左外连接</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> emp.EMPNO, emp.ENAME, emp.SAL, dept.DNAME <span class="keyword">FROM</span> emp <span class="keyword">left</span> <span class="keyword">JOIN</span> dept <span class="keyword">ON</span> emp.DEPTNO <span class="operator">=</span> dept.DEPTNO</span><br></pre></td></tr></table></figure>
+
+<p>#右外连接</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> emp.EMPNO, emp.ENAME, emp.SAL, dept.DNAME <span class="keyword">FROM</span> emp <span class="keyword">right</span> <span class="keyword">JOIN</span> dept <span class="keyword">ON</span> emp.DEPTNO <span class="operator">=</span> dept.DEPTNO</span><br></pre></td></tr></table></figure>
+
+<p>查询所有员工每个月的平均工资及总工资</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">avg</span>(sal) <span class="keyword">as</span> avgSal,<span class="built_in">sum</span>(sal) <span class="keyword">as</span> sumSal <span class="keyword">from</span> emp</span><br></pre></td></tr></table></figure>
+
+<p>查询月薪在 2000 以上的员工总人数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">from</span> emp <span class="keyword">where</span> sal<span class="operator">&gt;</span><span class="number">2000</span></span><br></pre></td></tr></table></figure>
+
+<p>查询员工最高工资和最低工资差距</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">max</span>(sal)<span class="operator">-</span><span class="built_in">min</span>(sal) <span class="keyword">from</span> emp</span><br></pre></td></tr></table></figure>
+
+<p>按照职位分组，求出每个职位的最高和最低工资</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">max</span>(sal),<span class="built_in">min</span>(sal) <span class="keyword">from</span> emp <span class="keyword">group</span> <span class="keyword">by</span> job</span><br></pre></td></tr></table></figure>
+
+<p>查询出每一个部门员工的平均工资</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">avg</span>(sal) <span class="keyword">from</span> emp <span class="keyword">group</span> <span class="keyword">by</span> deptno</span><br></pre></td></tr></table></figure>
+
+<p>查询各个部门和岗位的平均工资</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">avg</span>(sal),deptno,job <span class="keyword">from</span> emp <span class="keyword">group</span> <span class="keyword">by</span> deptno,job</span><br></pre></td></tr></table></figure>
+
+<p>查询部门平均工资高于 2000 的部门及其平均工资</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">avg</span>(sal) <span class="keyword">from</span> emp <span class="keyword">group</span> <span class="keyword">by</span> deptno <span class="keyword">having</span> <span class="built_in">avg</span>(sal)<span class="operator">&gt;</span><span class="number">2000</span></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">avg</span>(sal) <span class="keyword">as</span> avgSal <span class="keyword">from</span> emp <span class="keyword">group</span> <span class="keyword">by</span> deptno <span class="keyword">having</span> avgSal<span class="operator">&gt;</span><span class="number">2000</span></span><br></pre></td></tr></table></figure>
+
+<p>查询在 80, 81, 82 年各进公司多少人</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">year</span>(hiredate) <span class="keyword">as</span> y, <span class="built_in">count</span>(empno) <span class="keyword">from</span> emp <span class="keyword">group</span> <span class="keyword">by</span> y <span class="keyword">having</span> y <span class="keyword">between</span> <span class="string">&#x27;1980&#x27;</span> <span class="keyword">and</span> <span class="string">&#x27;1982&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>查询各个管理人员下员工的平均工资，其中最低工资不能低于 1300</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> mgr, <span class="built_in">avg</span>(sal),<span class="built_in">min</span>(sal) <span class="keyword">as</span> minSal <span class="keyword">from</span> emp <span class="keyword">group</span> <span class="keyword">by</span> mgr <span class="keyword">having</span> minsal<span class="operator">&gt;</span><span class="number">1300</span></span><br></pre></td></tr></table></figure>
+
+<p>查询大于平均工资的员工</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">avg</span>(sal) <span class="keyword">from</span> emp</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">where</span> sal<span class="operator">&gt;</span>(<span class="keyword">select</span> <span class="built_in">avg</span>(sal) <span class="keyword">from</span> emp)</span><br></pre></td></tr></table></figure>
+
+<p>查询出工资比 MARTIN 还要高的全部雇员信息</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> sal <span class="keyword">from</span> emp <span class="keyword">where</span> ename<span class="operator">=</span><span class="string">&#x27;martin&#x27;</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">where</span> sal<span class="operator">&gt;</span>(<span class="keyword">select</span> sal <span class="keyword">from</span> emp <span class="keyword">where</span> ename<span class="operator">=</span><span class="string">&#x27;martin&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>查询平均工资高于公司平均工资的部门信息</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">avg</span>(sal) <span class="keyword">from</span> emp</span><br><span class="line"><span class="keyword">select</span> <span class="built_in">avg</span>(sal) <span class="keyword">as</span> avgSal,d.deptno,d.dname <span class="keyword">from</span> emp <span class="keyword">as</span> e <span class="keyword">inner</span> <span class="keyword">join</span> dept <span class="keyword">as</span> d <span class="keyword">on</span> e.deptno<span class="operator">=</span>d.deptno  <span class="keyword">group</span> <span class="keyword">by</span> deptno <span class="keyword">having</span> avgSal<span class="operator">&gt;</span>(<span class="keyword">select</span> <span class="built_in">avg</span>(sal) <span class="keyword">from</span> emp)</span><br></pre></td></tr></table></figure>
+
+<p>查询工资等于部门经理（职位是 MANAGER）的员工信息。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> sal <span class="keyword">from</span> emp <span class="keyword">where</span> job <span class="operator">=</span><span class="string">&#x27;MA</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h2><p><a target="_blank" rel="noopener" href="https://gitee.com/kairong6/blog/blob/master/02_MySQL.pdf">sql语法文件</a></p>
+<p><a target="_blank" rel="noopener" href="https://gitee.com/kairong6/blog/blob/master/mysqlplus.sql">sql建表文件</a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Kairong
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://kairong6.gitee.io/2022/03/12/mysql/" title="mysql">https://kairong6.gitee.io/2022/03/12/mysql/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/mysql/" rel="tag"># mysql</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/01/22/java03/" rel="prev" title="java03">
+      <i class="fa fa-chevron-left"></i> java03
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#sql%E9%87%8D%E7%82%B9%E8%AF%AD%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">sql重点语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sql%E7%BB%83%E4%B9%A0%EF%BC%88%E8%A1%A8%E8%A7%81%E9%99%84%E4%BB%B6%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">sql练习（表见附件）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5"><span class="nav-number">2.1.</span> <span class="nav-text">第一阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5"><span class="nav-number">2.2.</span> <span class="nav-text">第二阶段</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%99%84%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">附件</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Kairong"
+      src="/images/ckr.png">
+  <p class="site-author-name" itemprop="name">Kairong</p>
+  <div class="site-description" itemprop="description">若想得到未得到的东西，必先做从未做过的事</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+	  
+	  
+	  <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+	  <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+	  <div class="widget-wrap">
+	      <h3 class="widget-title">Tag Cloud</h3>
+	      <div id="myCanvasContainer" class="widget tagcloud">
+	          <canvas width="250" height="250" id="resCanvas" style="width=100%">
+	              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%9F%BA%E7%A1%80/" rel="tag">java基础</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/one/" rel="tag">one</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/start/" rel="tag">start</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B4%E8%B4%A7%E5%BF%AB%E9%80%92/" rel="tag">年货快递</a><span class="tag-list-count">1</span></li></ul>
+	          </canvas>
+	      </div>
+	  </div>
+	  
+
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kairong</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+  
+     <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+     <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+     <script type="text/javascript" src="/js/src/fireworks.js"></script>
+  
+  
+  <script src="/live2d-widget/autoload.js"></script>
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+
