@@ -126,17 +126,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">11</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">12</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">5</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">6</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">15</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">17</span></a>
 
   </li>
         <li class="menu-item menu-item-favorite">
@@ -190,6 +190,262 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://kairong6.gitee.io/2022/04/05/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/ckr.png">
+      <meta itemprop="name" content="Kairong">
+      <meta itemprop="description" content="若想得到未得到的东西，必先做从未做过的事">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ckrの博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/04/05/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">代理模式</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-04-05 20:11:46" itemprop="dateCreated datePublished" datetime="2022-04-05T20:11:46+08:00">2022-04-05</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://kairong6.gitee.io/2022/04/05/%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/ckr.png">
+      <meta itemprop="name" content="Kairong">
+      <meta itemprop="description" content="若想得到未得到的东西，必先做从未做过的事">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ckrの博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/04/05/%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/" class="post-title-link" itemprop="url">事务管理</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-04-05 20:11:20 / 修改时间：22:44:04" itemprop="dateCreated datePublished" datetime="2022-04-05T20:11:20+08:00">2022-04-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/spring/" itemprop="url" rel="index"><span itemprop="name">spring</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Spring-事务管理"><a href="#Spring-事务管理" class="headerlink" title="Spring-事务管理"></a>Spring-事务管理</h1><h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><p><img src="https://gitee.com/kairong6/hexo_img/raw/master/20220405204426.png" alt="image-20220405204425827"></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="引入相关jar包"><a href="#引入相关jar包" class="headerlink" title="引入相关jar包"></a>引入相关jar包</h3><p>pom.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://maven.apache.org/POM/4.0.0&quot;</span> <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.example<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring9<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">packaging</span>&gt;</span>war<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.1.45<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-jdbc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.3.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-beans<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.3.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.3.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.3.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.3.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.0.8.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.13<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>druid<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.1.24<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="创建db-properties文件"><a href="#创建db-properties文件" class="headerlink" title="创建db.properties文件"></a>创建db.properties文件</h3><p>db.properties</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">jdbc.driverClassName</span>=<span class="string">com.mysql.jdbc.Driver</span></span><br><span class="line"><span class="meta">jdbc.url</span>=<span class="string">jdbc:mysql://localhost:3306/spring?useUnicode=true&amp;characterEncoding=utf-8</span></span><br><span class="line"><span class="meta">jdbc.username</span>=<span class="string">root</span></span><br><span class="line"><span class="meta">jdbc.password</span>=<span class="string">123456</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="创建beans-xml文件"><a href="#创建beans-xml文件" class="headerlink" title="创建beans.xml文件"></a>创建beans.xml文件</h3><p>beans.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:context</span>=<span class="string">&quot;http://www.springframework.org/schema/context&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="string"><span class="tag">       http://www.springframework.org/schema/beans/spring-beans.xsd</span></span></span><br><span class="line"><span class="string"><span class="tag">       http://www.springframework.org/schema/context</span></span></span><br><span class="line"><span class="string"><span class="tag">       http://www.springframework.org/schema/context/spring-context.xsd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">&quot;cn.kairong.spring.*&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--先加载到db.properties配置文件中--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context:property-placeholder</span> <span class="attr">location</span>=<span class="string">&quot;db.properties&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">context:property-placeholder</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--使用Druid连接池--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;druidDataSource&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.alibaba.druid.pool.DruidDataSource&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;driverClassName&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;jdbc.driverClassName&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;jdbc.username&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;url&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;jdbc.url&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;jdbc.password&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="创建数据表"><a href="#创建数据表" class="headerlink" title="创建数据表"></a>创建数据表</h3><p>student</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `student` (</span><br><span class="line">  `id` <span class="type">int</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `uname` <span class="type">varchar</span>(<span class="number">50</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `password` <span class="type">varchar</span>(<span class="number">50</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  <span class="keyword">PRIMARY</span> KEY (`id`)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>operation</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> `student` (</span><br><span class="line">  `id` <span class="type">int</span>(<span class="number">20</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `uname` <span class="type">varchar</span>(<span class="number">50</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  `password` <span class="type">varchar</span>(<span class="number">50</span>) <span class="keyword">DEFAULT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  <span class="keyword">PRIMARY</span> KEY (`id`)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h2 id="entity层"><a href="#entity层" class="headerlink" title="entity层"></a>entity层</h2><h3 id="Student-java"><a href="#Student-java" class="headerlink" title="Student.java"></a>Student.java</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.kairong.spring.entity;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 与数据库表student映射的实体类</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Integer id ;</span><br><span class="line">    <span class="keyword">private</span> String uname ;</span><br><span class="line">    <span class="keyword">private</span> String password ;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(Integer id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getUname</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> uname;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUname</span><span class="params">(String uname)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.uname = uname;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getPassword</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPassword</span><span class="params">(String password)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.password = password;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Operstion-java"><a href="#Operstion-java" class="headerlink" title="Operstion.java"></a>Operstion.java</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.kairong.spring.entity;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.sql.Timestamp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Operation</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Integer id ;</span><br><span class="line">    <span class="keyword">private</span> String  operation ;</span><br><span class="line">    <span class="keyword">private</span> Timestamp opertime ;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(Integer id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getOperation</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> operation;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setOperation</span><span class="params">(String operation)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.operation = operation;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Timestamp <span class="title">getOpertime</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> opertime;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setOpertime</span><span class="params">(Timestamp opertime)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.opertime = opertime;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="dao层"><a href="#dao层" class="headerlink" title="dao层"></a>dao层</h2><h3 id="持久层接口"><a href="#持久层接口" class="headerlink" title="持久层接口"></a>持久层接口</h3><p>IStudentDao</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.kairong.spring.dao;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.kairong.spring.entity.Operation;</span><br><span class="line"><span class="keyword">import</span> cn.kairong.spring.entity.Student;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.sql.SQLException;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 与用户相关的数据库操作</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">IStudentDao</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 插入学生信息到数据库中</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> student</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(Student student)</span> <span class="keyword">throws</span> SQLException</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 插入日志信息</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> operation</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(Operation operation)</span> <span class="keyword">throws</span> SQLException</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="持久层接口实现类"><a href="#持久层接口实现类" class="headerlink" title="持久层接口实现类"></a>持久层接口实现类</h3><p>StudentDaoImpl.java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.kairong.spring.dao.impl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.kairong.spring.dao.IStudentDao;</span><br><span class="line"><span class="keyword">import</span> cn.kairong.spring.entity.Operation;</span><br><span class="line"><span class="keyword">import</span> cn.kairong.spring.entity.Student;</span><br><span class="line"><span class="keyword">import</span> com.alibaba.druid.pool.DruidDataSource;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Repository;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.annotation.Resource;</span><br><span class="line"><span class="keyword">import</span> java.sql.Connection;</span><br><span class="line"><span class="keyword">import</span> java.sql.PreparedStatement;</span><br><span class="line"><span class="keyword">import</span> java.sql.SQLException;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 是StduentDao的实现类</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Repository</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StudentDaoimpl</span> <span class="keyword">implements</span> <span class="title">IStudentDao</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    @Resource</span></span><br><span class="line"><span class="comment">//    private TrancManager trancManager ;</span></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    DruidDataSource druidDataSource;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *  插入学生信息到数据库中</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> student</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">(Student student)</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">        <span class="comment">//先获取连接  使用druid连接池</span></span><br><span class="line">        Connection connection = druidDataSource.getConnection();</span><br><span class="line"><span class="comment">//        Connection connection = trancManager.getConnection();</span></span><br><span class="line">        System.out.println(connection);</span><br><span class="line">        PreparedStatement pst = connection.prepareStatement(<span class="string">&quot;insert into student values (?,?,?)&quot;</span>);</span><br><span class="line">        pst.setInt(<span class="number">1</span>, student.getId());</span><br><span class="line">        pst.setString(<span class="number">2</span>, student.getUname());</span><br><span class="line">        pst.setString(<span class="number">3</span>, student.getPassword());</span><br><span class="line">        pst.executeUpdate();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">(Operation operation)</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">        <span class="comment">//先获取连接  使用druid连接池</span></span><br><span class="line">        Connection connection = druidDataSource.getConnection();</span><br><span class="line"><span class="comment">//        Connection connection = trancManager.getConnection();</span></span><br><span class="line">        System.out.println(connection);</span><br><span class="line">        PreparedStatement pst = connection.prepareStatement(<span class="string">&quot;insert into operation values (?,?,?)&quot;</span>);</span><br><span class="line">        pst.setInt(<span class="number">1</span>,operation.getId());</span><br><span class="line">        pst.setString(<span class="number">2</span>,operation.getOperation());</span><br><span class="line">        pst.setTimestamp(<span class="number">3</span>,operation.getOpertime());</span><br><span class="line"><span class="comment">//        double i=1/0 ;</span></span><br><span class="line">        pst.executeUpdate();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="service层"><a href="#service层" class="headerlink" title="service层"></a>service层</h2><h3 id="业务层接口"><a href="#业务层接口" class="headerlink" title="业务层接口"></a>业务层接口</h3><p>IStudentService.java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.kairong.spring.service;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.kairong.spring.entity.Student;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.sql.SQLException;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 学生相关的业务接口</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">IStudentService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">register</span><span class="params">(Student student)</span> <span class="keyword">throws</span> SQLException</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="业务层接口实现类"><a href="#业务层接口实现类" class="headerlink" title="业务层接口实现类"></a>业务层接口实现类</h3><p>StudentServiceImpl.java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.kairong.spring.service.impl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.kairong.spring.dao.IStudentDao;</span><br><span class="line"><span class="keyword">import</span> cn.kairong.spring.entity.Operation;</span><br><span class="line"><span class="keyword">import</span> cn.kairong.spring.entity.Student;</span><br><span class="line"><span class="keyword">import</span> cn.kairong.spring.service.IStudentService;</span><br><span class="line"><span class="keyword">import</span> com.alibaba.druid.pool.DruidDataSource;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.sql.SQLException;</span><br><span class="line"><span class="keyword">import</span> java.sql.Timestamp;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StudentServiceImpl</span> <span class="keyword">implements</span> <span class="title">IStudentService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> IStudentDao IStudentDao;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    @Autowired</span></span><br><span class="line"><span class="comment">//    private TrancManager trancManager ;</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> DruidDataSource druidDataSource;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 注册</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> student</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> SQLException</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">register</span><span class="params">(Student student)</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">        <span class="comment">//需要调用dao层的方法</span></span><br><span class="line">        <span class="comment">//插入学生信息</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            druidDataSource.getConnection();</span><br><span class="line">       		<span class="comment">//有着替代druidDataSource.getConnection();的作用</span></span><br><span class="line"><span class="comment">//            trancManager.startTranc();</span></span><br><span class="line">            IStudentDao.insert(student);</span><br><span class="line">            <span class="comment">//同时插入日志操作信息</span></span><br><span class="line">            Operation operation = <span class="keyword">new</span> Operation();</span><br><span class="line">            operation.setId(<span class="number">1</span>);</span><br><span class="line">            operation.setOperation(<span class="string">&quot;插入学生信息&quot;</span>);</span><br><span class="line">            operation.setOpertime(<span class="keyword">new</span> Timestamp(System.currentTimeMillis()));</span><br><span class="line">            IStudentDao.insert(operation);</span><br><span class="line">            <span class="comment">//提交</span></span><br><span class="line"><span class="comment">//            trancManager.commit();</span></span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            <span class="comment">//回滚</span></span><br><span class="line"><span class="comment">//            trancManager.rollBack();</span></span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="util层"><a href="#util层" class="headerlink" title="util层"></a>util层</h2><ul>
+<li><p>druid连接获取以及判断的工具类，用于解决事务管理违反原子性的问题。</p>
+</li>
+<li><p>原子性：在执行过程中如遇问题则会返回执行前的初始状态，若没有问题则完全执行。</p>
+</li>
+<li><p>拿到在beans.xml中配置的druidDataSource，并生成公共的druid连接并附加判断连接获取与否。</p>
+<p><strong>TrancManger.java</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.kairong.spring.util;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.alibaba.druid.pool.DruidDataSource;</span><br><span class="line"><span class="keyword">import</span> com.alibaba.druid.pool.DruidPooledConnection;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.sql.Connection;</span><br><span class="line"><span class="keyword">import</span> java.sql.SQLException;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TrancManager</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    DruidDataSource druidDataSource ;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//用于存放连接的ThreadLocal保存连接</span></span><br><span class="line">    <span class="keyword">private</span> ThreadLocal&lt;Connection&gt; local=<span class="keyword">new</span> ThreadLocal&lt;Connection&gt;();</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 基于Druid连接池获取连接</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> SQLException</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Connection <span class="title">getConnection</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">        <span class="comment">//dao方法在获取连接的时候判断是否存在该连接</span></span><br><span class="line">        <span class="keyword">if</span>(local.get() !=<span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> local.get() ;</span><br><span class="line">        &#125;</span><br><span class="line">        DruidPooledConnection connection = druidDataSource.getConnection();</span><br><span class="line">        local.set(connection);</span><br><span class="line">        <span class="keyword">return</span>  connection; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">startTranc</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">        <span class="comment">//关闭自动提交</span></span><br><span class="line">        getConnection().setAutoCommit(<span class="keyword">false</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">commit</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">        getConnection().commit();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rollBack</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">        getConnection().rollback();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="测试类以及结果"><a href="#测试类以及结果" class="headerlink" title="测试类以及结果"></a>测试类以及结果</h2><ul>
+<li>在这里使用Spring的测试类框架</li>
+</ul>
+<h3 id="测试一"><a href="#测试一" class="headerlink" title="测试一"></a>测试一</h3><ul>
+<li><p>创建测试类</p>
+<p>SpringTest.java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cn.kairong.spring.entity.Student;</span><br><span class="line"><span class="keyword">import</span> cn.kairong.spring.service.IStudentService;</span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.context.ContextConfiguration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.context.junit4.SpringJUnit4ClassRunner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.annotation.Resource;</span><br><span class="line"><span class="keyword">import</span> java.sql.SQLException;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RunWith(SpringJUnit4ClassRunner.class)</span></span><br><span class="line"><span class="meta">@ContextConfiguration(&quot;classpath:beans.xml&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SpringTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> IStudentService studentServiceImpl;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testService</span><span class="params">()</span> <span class="keyword">throws</span> SQLException </span>&#123;</span><br><span class="line">        Student student = <span class="keyword">new</span> Student();</span><br><span class="line">        student.setId(<span class="number">107</span>);</span><br><span class="line">        student.setUname(<span class="string">&quot;秋香&quot;</span>);</span><br><span class="line">        student.setPassword(<span class="string">&quot;567890&quot;</span>);</span><br><span class="line">        studentServiceImpl.register(student);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="结果一"><a href="#结果一" class="headerlink" title="结果一"></a>结果一</h4><ul>
+<li><p>无异常测试</p>
+</li>
+<li><p>控制台无报错</p>
+</li>
+<li><p>数据表数据结果如图</p>
+</li>
+</ul>
+<p><img src="https://gitee.com/kairong6/hexo_img/raw/master/20220405213721.png" alt="image-20220405213721598"></p>
+<h4 id="结果二"><a href="#结果二" class="headerlink" title="结果二"></a>结果二</h4><ul>
+<li><p>异常测试</p>
+</li>
+<li><p>清空数据表所有数据</p>
+</li>
+<li><p>在StudentDaoImpl.java中operation的insert函数添加异常（这里用的是除数为零的异常）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> i=<span class="number">1</span>/<span class="number">0</span> ;</span><br></pre></td></tr></table></figure></li>
+<li><p>控制台报错情况</p>
+</li>
+</ul>
+<p><img src="https://gitee.com/kairong6/hexo_img/raw/master/20220405214606.png" alt="image-20220405214606644"></p>
+<ul>
+<li>数据表数据结果如图</li>
+</ul>
+<p><img src="https://gitee.com/kairong6/hexo_img/raw/master/20220405214756.png" alt="image-20220405214756301"></p>
+<ul>
+<li>存在违背原子性的问题</li>
+<li>解决办法见测试二</li>
+</ul>
+<h3 id="测试二"><a href="#测试二" class="headerlink" title="测试二"></a>测试二</h3><ul>
+<li><p>为维持原子性，需添加事务回滚函数</p>
+</li>
+<li><p>考虑自动事务提交的影响，需要关闭自动提交以及添加手动提交</p>
+</li>
+<li><p>由于代码是执行了两张表的数据添加操作，可以考虑给两个添加方式中使用同一个数据连接方法</p>
+</li>
+<li><p>为此在util层创建工具类实现以上需求，具体代码见util层TrancManger.java</p>
+</li>
+<li><p>需要将持久层实现类StudnetDaoImpl.java的DruidDataSource替换成TrancManger以及druidDataSource替换成trancManger</p>
+</li>
+<li><p>在业务层实现类StudentServiceImpl.java中执行上持久层里的操作</p>
+</li>
+<li><p>在业务层实现类需要在对应位置添加对应代码块如下,位置见StudentServiceImpl.java中的注释</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">trancManager.startTranc();</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">trancManager.commit();</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">trancManager.rollBack();</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="结果一-1"><a href="#结果一-1" class="headerlink" title="结果一"></a>结果一</h4><ul>
+<li><p>无异常测试</p>
+</li>
+<li><p>清空数据表所有数据</p>
+</li>
+<li><p>控制台无报错</p>
+</li>
+<li><p>数据表数据结果如图</p>
+</li>
+</ul>
+<p><img src="https://gitee.com/kairong6/hexo_img/raw/master/20220405213721.png" alt="image-20220405214756301"></p>
+<h4 id="结果二-1"><a href="#结果二-1" class="headerlink" title="结果二"></a>结果二</h4><ul>
+<li><p>异常测试</p>
+</li>
+<li><p>清空数据表所有数据</p>
+</li>
+<li><p>在StudentDaoImpl.java中operation的insert函数添加异常（这里用的是除数为零的异常）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> i=<span class="number">1</span>/<span class="number">0</span> ;</span><br></pre></td></tr></table></figure></li>
+<li><p>控制台报错情况</p>
+</li>
+</ul>
+<p><img src="https://gitee.com/kairong6/hexo_img/raw/master/20220405214606.png" alt="image-20220405214606644"></p>
+<ul>
+<li>数据表数据结果如图</li>
+</ul>
+<p><img src="https://gitee.com/kairong6/hexo_img/raw/master/20220405223146.png" alt="image-20220405223145962"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li> 最初的代码雏形中未考虑可能存在违背原子性的问题</li>
+<li>在测试中添加异常的结果让我们猜得以发现存在的问题</li>
+<li>思考解决办法时关注执行多个业务时所存在的共同点或者共同代码块</li>
+<li>同时需要排除自动提交的可能性</li>
+<li>事务的回滚同样是维持原子性的重点</li>
+<li>利用以上需求编写符合要求的工具类</li>
+<li>在业务层结合try-catch捕获数据连接抛出的异常即可解决违背原子性的问题</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -1121,161 +1377,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kairong6.gitee.io/2022/01/15/java01/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ckr.png">
-      <meta itemprop="name" content="Kairong">
-      <meta itemprop="description" content="若想得到未得到的东西，必先做从未做过的事">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ckrの博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/15/java01/" class="post-title-link" itemprop="url">java01</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-01-15 21:20:55 / 修改时间：21:31:04" itemprop="dateCreated datePublished" datetime="2022-01-15T21:20:55+08:00">2022-01-15</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="一、八大数据类型"><a href="#一、八大数据类型" class="headerlink" title="一、八大数据类型"></a>一、八大数据类型</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">hello</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"><span class="comment">//        八大数据类型</span></span><br><span class="line"><span class="comment">//        整数</span></span><br><span class="line">        <span class="keyword">int</span> num1 = <span class="number">10</span>; <span class="comment">//最常用</span></span><br><span class="line">        <span class="keyword">byte</span> num2 = <span class="number">20</span>;</span><br><span class="line">        <span class="keyword">short</span> num3 = <span class="number">30</span>;</span><br><span class="line">        <span class="keyword">long</span> num4 = <span class="number">30L</span>; <span class="comment">//Long类型数后面需要加一个L</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//        小数：浮点数</span></span><br><span class="line">        <span class="keyword">float</span> num5 = <span class="number">50.1F</span>; <span class="comment">//float类型数后面需要加一个F</span></span><br><span class="line">        <span class="keyword">double</span> num6 = <span class="number">3.141592653589793238462643</span>;</span><br><span class="line"><span class="comment">//        字符</span></span><br><span class="line">        <span class="keyword">char</span> name = <span class="string">&#x27;国&#x27;</span>;</span><br><span class="line"><span class="comment">//        字符串，String不是关键字，类</span></span><br><span class="line">        String namea = <span class="string">&quot;中国&quot;</span>;</span><br><span class="line"><span class="comment">//        布尔值：是非</span></span><br><span class="line">        <span class="keyword">boolean</span> flag = <span class="keyword">true</span>;</span><br><span class="line"><span class="comment">//        boolean flag = false;</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="二、类型拓展"><a href="#二、类型拓展" class="headerlink" title="二、类型拓展"></a>二、类型拓展</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">demo1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"><span class="comment">// 整数拓展:进制  二进制：0b  八进制：0 十进制：十六进制：0x</span></span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">10</span>;<span class="comment">//十进制</span></span><br><span class="line">        <span class="keyword">int</span> i1 = <span class="number">0b10</span>;<span class="comment">//二进制</span></span><br><span class="line">        <span class="keyword">int</span> i2 = <span class="number">010</span>;<span class="comment">//八进制</span></span><br><span class="line">        <span class="keyword">int</span> i3 = <span class="number">0x10</span>;<span class="comment">//十六进制    0~9 A~F 16</span></span><br><span class="line">        System.out.println(i);</span><br><span class="line">        System.out.println(i1);</span><br><span class="line">        System.out.println(i2);</span><br><span class="line">        System.out.println(i3);</span><br><span class="line">        System.out.println(<span class="string">&quot;============================&quot;</span>);</span><br><span class="line">        <span class="comment">//================================================</span></span><br><span class="line">        <span class="comment">//浮点数拓展？ 银行业务如何实现？ 钱</span></span><br><span class="line">        <span class="comment">//BigDecimal    数学工具类</span></span><br><span class="line">        <span class="comment">//================================================</span></span><br><span class="line">        <span class="comment">//float     有限  离散  舍入误差    大约  接近但不等于</span></span><br><span class="line">        <span class="comment">//double</span></span><br><span class="line">        <span class="comment">//最好完全避免使用浮点数比较</span></span><br><span class="line">        <span class="comment">//最好完全避免使用浮点数比较</span></span><br><span class="line">        <span class="comment">//最好完全避免使用浮点数比较</span></span><br><span class="line">        <span class="keyword">float</span> f = <span class="number">0.1f</span>;<span class="comment">//0.1</span></span><br><span class="line">        <span class="keyword">double</span> d = <span class="number">1.0</span>/<span class="number">10</span>;<span class="comment">//0.1</span></span><br><span class="line"></span><br><span class="line">        System.out.println(f==d);<span class="comment">//false</span></span><br><span class="line">        System.out.println(f);</span><br><span class="line">        System.out.println(d);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">float</span> d1 = <span class="number">2123132345563f</span>;</span><br><span class="line">        <span class="keyword">float</span> d2 = d1+<span class="number">1</span>;</span><br><span class="line">        System.out.println(d1==d2);<span class="comment">//true</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//================================================</span></span><br><span class="line">        <span class="comment">//字符拓展？</span></span><br><span class="line">        <span class="comment">//================================================</span></span><br><span class="line">        System.out.println(<span class="string">&quot;============================&quot;</span>);</span><br><span class="line">        <span class="keyword">char</span> c1 = <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">        <span class="keyword">char</span> c2 = <span class="string">&#x27;程&#x27;</span>;</span><br><span class="line">        System.out.println(c1);</span><br><span class="line"></span><br><span class="line">        System.out.println((<span class="keyword">int</span>) c1);<span class="comment">//强制转换</span></span><br><span class="line"></span><br><span class="line">        System.out.println(c2);</span><br><span class="line"></span><br><span class="line">        System.out.println((<span class="keyword">int</span>) c2);<span class="comment">//强制转换</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//所有字符的本质还是数字</span></span><br><span class="line">        <span class="comment">//编码 Unicode 表：（ 97 = a 程 = 31243）  2字节 0 ~ 65536   Excel  2∧16 = 65536</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//U0000 UFFFF</span></span><br><span class="line">        <span class="keyword">char</span> c3 = <span class="string">&#x27;\u0061&#x27;</span>;</span><br><span class="line">        System.out.println(c3);<span class="comment">//a</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//================================================</span></span><br><span class="line">        <span class="comment">//转义字符</span></span><br><span class="line">        <span class="comment">// \t 制表符</span></span><br><span class="line">        <span class="comment">// \n 换行符</span></span><br><span class="line">        <span class="comment">// .....</span></span><br><span class="line">        <span class="comment">//================================================</span></span><br><span class="line">        System.out.println(<span class="string">&quot;============================&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;hello\tworld&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;hello\nworld&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;============================&quot;</span>);</span><br><span class="line">        String sa = <span class="keyword">new</span> String(<span class="string">&quot;hello world&quot;</span>);</span><br><span class="line">        String sb = <span class="keyword">new</span> String(<span class="string">&quot;hello world&quot;</span>);</span><br><span class="line">        System.out.println(sa==sb);<span class="comment">//false</span></span><br><span class="line">        String sc = <span class="string">&quot;hello world&quot;</span>;</span><br><span class="line">        String sd = <span class="string">&quot;hello world&quot;</span>;</span><br><span class="line">        System.out.println(sc==sd);<span class="comment">//true</span></span><br><span class="line">        <span class="comment">//对象 从内存分析</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//布尔值拓展</span></span><br><span class="line">        System.out.println(<span class="string">&quot;============================&quot;</span>);</span><br><span class="line">        <span class="keyword">boolean</span> flag = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (flag == <span class="keyword">true</span>)&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;111&quot;</span>);</span><br><span class="line">        &#125;<span class="comment">//新手</span></span><br><span class="line">        <span class="keyword">if</span> (flag)&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;222&quot;</span>);</span><br><span class="line">        &#125;<span class="comment">//老手   less is more! 精简易读</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kairong6.gitee.io/2022/01/07/%E5%BF%AB%E9%80%92%E6%B8%85%E5%8D%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ckr.png">
-      <meta itemprop="name" content="Kairong">
-      <meta itemprop="description" content="若想得到未得到的东西，必先做从未做过的事">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ckrの博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/07/%E5%BF%AB%E9%80%92%E6%B8%85%E5%8D%95/" class="post-title-link" itemprop="url">快递清单</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-01-07 15:36:29 / 修改时间：19:00:08" itemprop="dateCreated datePublished" datetime="2022-01-07T15:36:29+08:00">2022-01-07</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="顺丰速运"><a href="#顺丰速运" class="headerlink" title="顺丰速运"></a>顺丰速运</h2><ul>
-<li><h3 id="砂糖橘（无取件码）"><a href="#砂糖橘（无取件码）" class="headerlink" title="砂糖橘（无取件码）"></a>砂糖橘（<a target="_blank" rel="noopener" href="https://gitee.com/kairong6/hexo_img/raw/master/20220107173837.png">无取件码</a>）</h3><p>（程开荣：18791603671）</p>
-</li>
-</ul>
-<h2 id="韵达快递"><a href="#韵达快递" class="headerlink" title="韵达快递"></a>韵达快递</h2><ul>
-<li><h3 id="南瓜子（06043）"><a href="#南瓜子（06043）" class="headerlink" title="南瓜子（06043）"></a>南瓜子（<a target="_blank" rel="noopener" href="https://gitee.com/kairong6/hexo_img/raw/master/20220107171802.jpg">06043</a>）</h3></li>
-</ul>
-<ul>
-<li><h3 id="西瓜子（06043）"><a href="#西瓜子（06043）" class="headerlink" title="西瓜子（06043）"></a>西瓜子（<a target="_blank" rel="noopener" href="https://gitee.com/kairong6/hexo_img/raw/master/20220107173645.png">06043</a>）</h3></li>
-<li><h3 id="下饭拌酱（04019）"><a href="#下饭拌酱（04019）" class="headerlink" title="下饭拌酱（04019）"></a>下饭拌酱（<a target="_blank" rel="noopener" href="https://gitee.com/kairong6/hexo_img/raw/master/20220107174120.png">04019</a>）</h3></li>
-<li><h3 id="砍刀（05068）"><a href="#砍刀（05068）" class="headerlink" title="砍刀（05068）"></a>砍刀（<a target="_blank" rel="noopener" href="https://gitee.com/kairong6/hexo_img/raw/master/20220107174254.png">05068</a>）</h3></li>
-<li><h3 id="文财苹果（06024）"><a href="#文财苹果（06024）" class="headerlink" title="文财苹果（06024）"></a>文财苹果（<a target="_blank" rel="noopener" href="https://gitee.com/kairong6/hexo_img/raw/master/20220107175129.png">06024</a>）</h3><p>（程文财：13892690577）</p>
-</li>
-</ul>
-<h2 id="申通快递"><a href="#申通快递" class="headerlink" title="申通快递"></a>申通快递</h2><ul>
-<li><h3 id="抄勺（1-03-23）"><a href="#抄勺（1-03-23）" class="headerlink" title="抄勺（1-03-23）"></a>抄勺（<a target="_blank" rel="noopener" href="https://gitee.com/kairong6/hexo_img/raw/master/20220107174437.png">1-03-23</a>）</h3></li>
-<li><h3 id="小荣苹果（1-06-35）"><a href="#小荣苹果（1-06-35）" class="headerlink" title="小荣苹果（1-06-35）"></a>小荣苹果（<a target="_blank" rel="noopener" href="https://gitee.com/kairong6/hexo_img/raw/master/20220107174652.png">1-06-35</a>）</h3></li>
-<li><h3 id="开心果（还没到）"><a href="#开心果（还没到）" class="headerlink" title="开心果（还没到）"></a><del>开心果（<a target="_blank" rel="noopener" href="https://gitee.com/kairong6/hexo_img/raw/master/20220107175715.png">还没到</a>）</del></h3></li>
-</ul>
-<h2 id="圆通速递"><a href="#圆通速递" class="headerlink" title="圆通速递"></a>圆通速递</h2><ul>
-<li><h3 id="生瓜子和熟瓜子（还没到）"><a href="#生瓜子和熟瓜子（还没到）" class="headerlink" title="生瓜子和熟瓜子（还没到）"></a><del>生瓜子和熟瓜子（<a target="_blank" rel="noopener" href="https://gitee.com/kairong6/hexo_img/raw/master/20220107180131.png">还没到</a>）</del></h3></li>
-<li><h3 id="大蒜头（还没到）"><a href="#大蒜头（还没到）" class="headerlink" title="大蒜头（还没到）"></a><del>大蒜头（<a target="_blank" rel="noopener" href="https://gitee.com/kairong6/hexo_img/raw/master/20220107180839.png">还没到</a>）</del></h3></li>
-</ul>
-<h2 id="中通快递"><a href="#中通快递" class="headerlink" title="中通快递"></a>中通快递</h2><ul>
-<li><h3 id="砂糖橘（还没到）"><a href="#砂糖橘（还没到）" class="headerlink" title="砂糖橘（还没到）"></a><del>砂糖橘（<a target="_blank" rel="noopener" href="https://gitee.com/kairong6/hexo_img/raw/master/20220107180702.png">还没到</a>）</del></h3></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1347,20 +1448,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1381,7 +1482,7 @@
 	      <h3 class="widget-title">Tag Cloud</h3>
 	      <div id="myCanvasContainer" class="widget tagcloud">
 	          <canvas width="250" height="250" id="resCanvas" style="width=100%">
-	              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DI/" rel="tag">DI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDBC/" rel="tag">JDBC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%9F%BA%E7%A1%80/" rel="tag">java基础</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/one/" rel="tag">one</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springOne/" rel="tag">springOne</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/start/" rel="tag">start</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B4%E8%B4%A7%E5%BF%AB%E9%80%92/" rel="tag">年货快递</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B3%A8%E8%A7%A3/" rel="tag">注解</a><span class="tag-list-count">2</span></li></ul>
+	              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DI/" rel="tag">DI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDBC/" rel="tag">JDBC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%9F%BA%E7%A1%80/" rel="tag">java基础</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/one/" rel="tag">one</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springOne/" rel="tag">springOne</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/start/" rel="tag">start</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/" rel="tag">事务管理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B4%E8%B4%A7%E5%BF%AB%E9%80%92/" rel="tag">年货快递</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B3%A8%E8%A7%A3/" rel="tag">注解</a><span class="tag-list-count">2</span></li></ul>
 	          </canvas>
 	      </div>
 	  </div>

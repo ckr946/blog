@@ -22,24 +22,19 @@
     var CONFIG = {"hostname":"kairong6.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
   </script>
 
-  <meta name="description" content="强转换和自转换类型等级 代码示例1234567891011121314151617181920public class demo2 &amp;#123;    public static void main(String[] args) &amp;#123;        int i &#x3D; 128;        byte b &#x3D; (byte)i;&#x2F;&#x2F;内存溢出     高--低    强制转换        dou">
+  <meta name="description" content="若想得到未得到的东西，必先做从未做过的事">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java02">
-<meta property="og:url" content="https://kairong6.gitee.io/2022/01/16/java02/index.html">
+<meta property="og:title" content="代理模式">
+<meta property="og:url" content="https://kairong6.gitee.io/2022/04/05/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="ckrの博客">
-<meta property="og:description" content="强转换和自转换类型等级 代码示例1234567891011121314151617181920public class demo2 &amp;#123;    public static void main(String[] args) &amp;#123;        int i &#x3D; 128;        byte b &#x3D; (byte)i;&#x2F;&#x2F;内存溢出     高--低    强制转换        dou">
+<meta property="og:description" content="若想得到未得到的东西，必先做从未做过的事">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/kairong6/hexo_img/raw/master/20220116200414.png">
-<meta property="og:image" content="https://gitee.com/kairong6/hexo_img/raw/master/20220116200619.png">
-<meta property="og:image" content="https://gitee.com/kairong6/hexo_img/raw/master/20220116200655.png">
-<meta property="article:published_time" content="2022-01-16T12:00:10.000Z">
-<meta property="article:modified_time" content="2022-01-17T12:16:39.663Z">
+<meta property="article:published_time" content="2022-04-05T12:11:46.000Z">
+<meta property="article:modified_time" content="2022-04-05T12:11:46.361Z">
 <meta property="article:author" content="Kairong">
-<meta property="article:tag" content="java基础">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/kairong6/hexo_img/raw/master/20220116200414.png">
 
-<link rel="canonical" href="https://kairong6.gitee.io/2022/01/16/java02/">
+<link rel="canonical" href="https://kairong6.gitee.io/2022/04/05/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/">
 
 
 <script id="page-configurations">
@@ -52,7 +47,7 @@
   };
 </script>
 
-  <title>java02 | ckrの博客</title>
+  <title>代理模式 | ckrの博客</title>
   
 
 
@@ -202,7 +197,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kairong6.gitee.io/2022/01/16/java02/">
+    <link itemprop="mainEntityOfPage" href="https://kairong6.gitee.io/2022/04/05/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/ckr.png">
@@ -215,7 +210,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          java02
+          代理模式
         </h1>
 
         <div class="post-meta">
@@ -225,23 +220,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2022-01-16 20:00:10" itemprop="dateCreated datePublished" datetime="2022-01-16T20:00:10+08:00">2022-01-16</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-17 20:16:39" itemprop="dateModified" datetime="2022-01-17T20:16:39+08:00">2022-01-17</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
-                </span>
+              <time title="创建时间：2022-04-05 20:11:46" itemprop="dateCreated datePublished" datetime="2022-04-05T20:11:46+08:00">2022-04-05</time>
             </span>
 
           
@@ -255,14 +234,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="强转换和自转换"><a href="#强转换和自转换" class="headerlink" title="强转换和自转换"></a>强转换和自转换</h2><h3 id="类型等级"><a href="#类型等级" class="headerlink" title="类型等级"></a>类型等级</h3><p><img src="https://gitee.com/kairong6/hexo_img/raw/master/20220116200414.png" alt="image-20220116200413981"></p>
-<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">demo2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">128</span>;</span><br><span class="line">        <span class="keyword">byte</span> b = (<span class="keyword">byte</span>)i;<span class="comment">//内存溢出     高--低    强制转换</span></span><br><span class="line">        <span class="keyword">double</span> d = i;   <span class="comment">//低--高  自动转换</span></span><br><span class="line">        System.out.println(i);</span><br><span class="line">        System.out.println(b);</span><br><span class="line">        System.out.println(d);</span><br><span class="line">        <span class="comment">//转换需要注意精度问题</span></span><br><span class="line">        System.out.println(<span class="string">&quot;=========================&quot;</span>);</span><br><span class="line">        System.out.println((<span class="keyword">int</span>)<span class="number">27.23</span>);</span><br><span class="line">        System.out.println((<span class="keyword">int</span>)-<span class="number">78.23F</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;=========================&quot;</span>);</span><br><span class="line">        <span class="keyword">char</span> c = <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">        <span class="keyword">int</span> q = c+<span class="number">1</span>;</span><br><span class="line">        System.out.println(q);</span><br><span class="line">        System.out.println((<span class="keyword">char</span>)q);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="数据计算转换问题"><a href="#数据计算转换问题" class="headerlink" title="数据计算转换问题"></a>数据计算转换问题</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">demo3</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//处理数据时，若数据源较大时</span></span><br><span class="line">        <span class="keyword">int</span> mony = <span class="number">10_0000_0000</span>;<span class="comment">//jdk7的特色</span></span><br><span class="line">        <span class="keyword">int</span> year = <span class="number">20</span>;</span><br><span class="line">        <span class="keyword">int</span> total2 = mony*year;</span><br><span class="line">        <span class="keyword">long</span> total = mony*year;</span><br><span class="line">        <span class="keyword">long</span> total1 = mony*(<span class="keyword">long</span>)year;</span><br><span class="line">        System.out.println(total);</span><br><span class="line">        System.out.println(total1);</span><br><span class="line">        System.out.println(total2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="变量命名"><a href="#变量命名" class="headerlink" title="变量命名"></a>变量命名</h2><p><img src="https://gitee.com/kairong6/hexo_img/raw/master/20220116200619.png" alt="image-20220116200619509"></p>
-<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><p><img src="https://gitee.com/kairong6/hexo_img/raw/master/20220116200655.png" alt="image-20220116200655899"></p>
-
+        
     </div>
 
     
@@ -277,7 +249,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://kairong6.gitee.io/2022/01/16/java02/" title="java02">https://kairong6.gitee.io/2022/01/16/java02/</a>
+    <a href="https://kairong6.gitee.io/2022/04/05/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" title="代理模式">https://kairong6.gitee.io/2022/04/05/代理模式/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -287,9 +259,6 @@
 
 
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/java%E5%9F%BA%E7%A1%80/" rel="tag"># java基础</a>
-          </div>
 
         
 
@@ -297,13 +266,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/01/15/java01/" rel="prev" title="java01">
-      <i class="fa fa-chevron-left"></i> java01
+    <a href="/2022/04/05/%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/" rel="prev" title="事务管理">
+      <i class="fa fa-chevron-left"></i> 事务管理
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/01/22/java03/" rel="next" title="java03">
-      java03 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -362,7 +328,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%BA%E8%BD%AC%E6%8D%A2%E5%92%8C%E8%87%AA%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.</span> <span class="nav-text">强转换和自转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E7%AD%89%E7%BA%A7"><span class="nav-number">1.1.</span> <span class="nav-text">类型等级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.2.</span> <span class="nav-text">代码示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%AE%A1%E7%AE%97%E8%BD%AC%E6%8D%A2%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">数据计算转换问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E5%91%BD%E5%90%8D"><span class="nav-number">3.</span> <span class="nav-text">变量命名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">4.</span> <span class="nav-text">逻辑运算符</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
