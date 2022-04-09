@@ -36,7 +36,7 @@ if (screen.width >= 768) {
 			apiPath: "https://live2d.fghrsh.net/api/",
 			// apiPath: "https://gitee.com/kairong6/api/blob/master/",
 			// cdnPath: "https://cdn.jsdelivr.net/gh/fghrsh/live2d_api/"
-			// cdnPath: "http://kairong6.gitee.io/api/"	
+			cdnPath: "http://kairong6.gitee.io/api/"	
 		});
 	});
 }
