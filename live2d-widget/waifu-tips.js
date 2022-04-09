@@ -67,7 +67,7 @@ function loadWidget(config) {
 				const script = document.createElement("script");
 				// script.src = "https://cdn.jsdelivr.net/gh/stevenjoezhang/asteroids/asteroids.js";
 				// script.src = "https://gitee.com/kairong6/api/blob/master/asteroids.js";
-				script.src = "http://kairong6.gitee.io/api/asteroids.js";
+				script.src = "https://kairong6.gitee.io/api/asteroids.js";
 				document.head.appendChild(script);
 			}
 		});
