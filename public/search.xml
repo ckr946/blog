@@ -4,31 +4,6 @@
   
     
     <entry>
-      <title>spring-mvc2</title>
-      <link href="/2022/04/12/spring-mvc2/"/>
-      <url>/2022/04/12/spring-mvc2/</url>
-      
-        <content type="html"><![CDATA[<p>测试tag</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Spring </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> mvc 转发和跳转 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>spring-mvc1</title>
       <link href="/2022/04/12/spring-mvc1/"/>
       <url>/2022/04/12/spring-mvc1/</url>
