@@ -22,20 +22,36 @@
     var CONFIG = {"hostname":"kairong6.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
   </script>
 
-  <meta name="description" content="我成功了！">
+  <meta name="description" content="一，浅尝Redis 是一种基于运存进行数据服务的读写工具（优缺点，适用场景待补充）   按要求下载相关文件并解压，如图    文件打开后依次点击    redis-server.exe （表示服务端 ）    redis-cli.exe        （表示客户端   —双击执行）     进行简单存储操作,依次输入以下指令  1get name  1set name ckr   1get nam">
 <meta property="og:type" content="article">
-<meta property="og:title" content="“ckr第一个博客”">
-<meta property="og:url" content="https://kairong6.gitee.io/2021/11/04/%E2%80%9Cckr%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%E2%80%9D/index.html">
+<meta property="og:title" content="redis基础01">
+<meta property="og:url" content="https://kairong6.gitee.io/2022/10/23/redis%E5%9F%BA%E7%A1%8001/index.html">
 <meta property="og:site_name" content="ckrの博客">
-<meta property="og:description" content="我成功了！">
+<meta property="og:description" content="一，浅尝Redis 是一种基于运存进行数据服务的读写工具（优缺点，适用场景待补充）   按要求下载相关文件并解压，如图    文件打开后依次点击    redis-server.exe （表示服务端 ）    redis-cli.exe        （表示客户端   —双击执行）     进行简单存储操作,依次输入以下指令  1get name  1set name ckr   1get nam">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-11-04T05:00:40.000Z">
-<meta property="article:modified_time" content="2022-05-26T18:20:48.568Z">
+<meta property="og:image" content="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220906204235.png">
+<meta property="og:image" content="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220906210123.png">
+<meta property="og:image" content="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220906204721.png">
+<meta property="og:image" content="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220906204749.png">
+<meta property="og:image" content="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220906210335.png">
+<meta property="og:image" content="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220906212520.png">
+<meta property="og:image" content="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220906213352.png">
+<meta property="og:image" content="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220906213528.png">
+<meta property="og:image" content="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220906213744.png">
+<meta property="og:image" content="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220906221338.png">
+<meta property="og:image" content="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220906221707.png">
+<meta property="og:image" content="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220906221806.png">
+<meta property="og:image" content="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220906223617.png">
+<meta property="og:image" content="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220906223818.png">
+<meta property="og:image" content="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220906225259.png">
+<meta property="article:published_time" content="2022-10-23T09:36:48.000Z">
+<meta property="article:modified_time" content="2022-10-23T09:40:50.154Z">
 <meta property="article:author" content="Kairong">
-<meta property="article:tag" content="one">
+<meta property="article:tag" content="Redis">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220906204235.png">
 
-<link rel="canonical" href="https://kairong6.gitee.io/2021/11/04/%E2%80%9Cckr%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%E2%80%9D/">
+<link rel="canonical" href="https://kairong6.gitee.io/2022/10/23/redis%E5%9F%BA%E7%A1%8001/">
 
 
 <script id="page-configurations">
@@ -48,7 +64,7 @@
   };
 </script>
 
-  <title>“ckr第一个博客” | ckrの博客</title>
+  <title>redis基础01 | ckrの博客</title>
   
 
 
@@ -198,7 +214,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kairong6.gitee.io/2021/11/04/%E2%80%9Cckr%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%E2%80%9D/">
+    <link itemprop="mainEntityOfPage" href="https://kairong6.gitee.io/2022/10/23/redis%E5%9F%BA%E7%A1%8001/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/ckr.png">
@@ -211,7 +227,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          “ckr第一个博客”
+          redis基础01
         </h1>
 
         <div class="post-meta">
@@ -220,16 +236,19 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-11-04 13:00:40" itemprop="dateCreated datePublished" datetime="2021-11-04T13:00:40+08:00">2021-11-04</time>
+              <time title="创建时间：2022-10-23 17:36:48 / 修改时间：17:40:50" itemprop="dateCreated datePublished" datetime="2022-10-23T17:36:48+08:00">2022-10-23</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-27 02:20:48" itemprop="dateModified" datetime="2022-05-27T02:20:48+08:00">2022-05-27</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Redis%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Redis基础</span></a>
+                </span>
+            </span>
 
           
 
@@ -242,7 +261,167 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="我成功了！"><a href="#我成功了！" class="headerlink" title="我成功了！"></a>我成功了！</h1>
+        <h1 id="一，浅尝Redis"><a href="#一，浅尝Redis" class="headerlink" title="一，浅尝Redis"></a>一，浅尝Redis</h1><blockquote>
+<p>是一种基于运存进行数据服务的读写工具（优缺点，适用场景待补充）</p>
+</blockquote>
+<ul>
+<li>按要求下载相关文件并解压，如图</li>
+</ul>
+<p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220906204235.png" alt="image-20220906204234781"></p>
+<ul>
+<li>文件打开后依次点击</li>
+</ul>
+<p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220906210123.png" alt="image-20220906210123143"></p>
+<ul>
+<li>redis-server.exe （表示服务端 ）</li>
+</ul>
+<p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220906204721.png" alt="image-20220906204721575"></p>
+<ul>
+<li>redis-cli.exe        （表示客户端   —双击执行） </li>
+</ul>
+<p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220906204749.png" alt="image-20220906204749574"></p>
+<ul>
+<li>进行简单存储操作,依次输入以下指令</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">get name</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set name ckr </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">get name</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>得结果如下图</li>
+</ul>
+<p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220906210335.png" alt="image-20220906210335513"></p>
+<ul>
+<li>启动顺序   ？应该先启动服务端再启动客户端</li>
+</ul>
+<h1 id="二，相关疑问"><a href="#二，相关疑问" class="headerlink" title="二，相关疑问"></a>二，相关疑问</h1><ol>
+<li> 有无其它的方式启动客户端和服务端  </li>
+</ol>
+<ul>
+<li><p>使用windows  dos命令操作  </p>
+<ul>
+<li><p>关闭之前使用的窗口</p>
+</li>
+<li><p>cmd -&gt;进入redis所在的目录</p>
+</li>
+<li><p>输入redis-server.exe并回车</p>
+</li>
+<li><p>输入redis-cli.exe并回车</p>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>如何远程连接别人的redis服务端呢 ?</li>
+</ol>
+<ul>
+<li>redis-cli.exe -h 【ip地址】 -p 【端口号】   —注意空格  <ul>
+<li>如下列图</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220906212520.png" alt="image-20220906212520826"></p>
+<ol start="3">
+<li>redis作为一个服务如何限制无关人员的访问</li>
+</ol>
+<ul>
+<li>首先找到 redis.windows.conf 这个文件 </li>
+<li>在该文件中找到requirepass ,且这是密码  ，要求实际开发过程中密码要尽量复杂</li>
+</ul>
+<p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220906213352.png" alt="image-20220906213351895"></p>
+<ul>
+<li>在redis目录中双击执行redis-server.exe启动后，使用客户端访问，并没有要求密码认证</li>
+<li>在cmd –&gt;执行redis-server.exe  redis.windows.conf</li>
+</ul>
+<p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220906213528.png" alt="image-20220906213528044"></p>
+<ul>
+<li>在客户端上获取信息get 提示需要密码  </li>
+<li>密码认证 指令   auth  你的密码</li>
+</ul>
+<p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220906213744.png" alt="image-20220906213743963"></p>
+<ol start="4">
+<li>将redis服务端作为一个服务(不需要每次都启动)</li>
+</ol>
+<ul>
+<li><p>cmd进入redis文件</p>
+</li>
+<li><p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220906221338.png" alt="image-20220906221338672"></p>
+</li>
+<li><p>将redis注册成为一个服务 </p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server.exe  --service-install redis.windows.conf  --loglevel verbose（服务名称Redis）</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>启动redis服务</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server --service-start</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220906221707.png" alt="image-20220906221651079"></p>
+<ul>
+<li>终止redis服务</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server --service-stop            </span><br></pre></td></tr></table></figure>
+
+<p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220906221806.png" alt="image-20220906221806764"></p>
+<ul>
+<li>redis服务更名 </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server --service-name 你的redis新的名称  （）           </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>redis卸载  </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server --service-uninstall</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li> 思考:  如何在一台计算机上安装多个redis   ?</li>
+</ul>
+<h1 id="三，Redis可视化"><a href="#三，Redis可视化" class="headerlink" title="三，Redis可视化"></a>三，Redis可视化</h1><ul>
+<li>下载并安装Redis可视化工具</li>
+<li>启动Redis服务</li>
+<li>打开并连接本地服务器</li>
+</ul>
+<p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220906223617.png" alt="image-20220906223617247"></p>
+<ul>
+<li>选择第一个分区进行Redis命令操作</li>
+</ul>
+<p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220906223818.png" alt="image-20220906223818267"></p>
+<ul>
+<li>String类型相关的常见的命令：</li>
+</ul>
+<ol>
+<li>保存/修改-根据键修改  </li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set key value</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>根据键获取值</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">get key</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>自增(默认步长1) </li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">incr key</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>自减(默认步长1) </li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">decr key</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>根据key删除键值</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del key</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>上述命令操作结果如下图</li>
+</ul>
+<p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220906225259.png" alt="image-20220906225259335"></p>
+
     </div>
 
     
@@ -257,7 +436,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://kairong6.gitee.io/2021/11/04/%E2%80%9Cckr%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%E2%80%9D/" title="“ckr第一个博客”">https://kairong6.gitee.io/2021/11/04/“ckr第一个博客”/</a>
+    <a href="https://kairong6.gitee.io/2022/10/23/redis%E5%9F%BA%E7%A1%8001/" title="redis基础01">https://kairong6.gitee.io/2022/10/23/redis基础01/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -268,7 +447,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/one/" rel="tag"># one</a>
+              <a href="/tags/Redis/" rel="tag"># Redis</a>
           </div>
 
         
@@ -276,11 +455,11 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2022/01/03/day01-1/" rel="next" title="day01">
-      day01 <i class="fa fa-chevron-right"></i>
+    <a href="/2022/10/23/redis%E5%9F%BA%E7%A1%8003/" rel="prev" title="redis基础03">
+      <i class="fa fa-chevron-left"></i> redis基础03
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -339,7 +518,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%88%91%E6%88%90%E5%8A%9F%E4%BA%86%EF%BC%81"><span class="nav-number">1.</span> <span class="nav-text">我成功了！</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%EF%BC%8C%E6%B5%85%E5%B0%9DRedis"><span class="nav-number">1.</span> <span class="nav-text">一，浅尝Redis</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%EF%BC%8C%E7%9B%B8%E5%85%B3%E7%96%91%E9%97%AE"><span class="nav-number">2.</span> <span class="nav-text">二，相关疑问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%EF%BC%8CRedis%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="nav-number">3.</span> <span class="nav-text">三，Redis可视化</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
