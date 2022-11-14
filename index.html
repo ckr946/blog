@@ -194,6 +194,248 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://kairong6.gitee.io/2022/10/23/redis%E5%9F%BA%E7%A1%8002/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/ckr.png">
+      <meta itemprop="name" content="Kairong">
+      <meta itemprop="description" content="若想得到未得到的东西，必先做从未做过的事">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ckrの博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/10/23/redis%E5%9F%BA%E7%A1%8002/" class="post-title-link" itemprop="url">redis基础02</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-10-23 17:36:48 / 修改时间：17:41:56" itemprop="dateCreated datePublished" datetime="2022-10-23T17:36:48+08:00">2022-10-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Redis%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Redis基础</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Redis命令"><a href="#Redis命令" class="headerlink" title="Redis命令"></a>Redis命令</h1><h2 id="一，String类型"><a href="#一，String类型" class="headerlink" title="一，String类型"></a>一，String类型</h2><h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><ul>
+<li>修改或保存key以及value值</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set key value</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>根据key的值获取value的值</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">get key</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将key对应的value进行递增 +1</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">incr key</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将Key对应的value进行递增（指定步长）</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">incrby  key num</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将key对应的value进行递减  -1</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">decr key</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>根据key去删除键值对(1对应删除成功)</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del key</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>设置key-value同时这是对应的有效期 （timeout  s）</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setex key timeout value</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>表示剩余时间 ，-2表示键是过期的/键值对不存在</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ttl key</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>表示键存在则不做任何操作/不存在则新增一个key-value</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setnx key value</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>设置多个键值对 -批量操作</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mset k1 v1</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>根据多个key获取对应的value(只要在db中都可以获取)</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mget k1</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>表示给某个key对应的value进行追加 最终返回是value的最终的长度</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">append key value</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>表示根据下标进行替换/修改</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setrange key  index  value</span><br></pre></td></tr></table></figure>
+
+<h3 id="图示"><a href="#图示" class="headerlink" title="图示"></a>图示</h3><p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220907200816.png" alt="image-20220907200816208"></p>
+<h2 id="二，Hash类型"><a href="#二，Hash类型" class="headerlink" title="二，Hash类型"></a>二，Hash类型</h2><blockquote>
+<p>定义和优缺点以及适用场景待补充</p>
+</blockquote>
+<h3 id="命令-1"><a href="#命令-1" class="headerlink" title="命令"></a>命令</h3><ul>
+<li>存放Hash对象</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hset key field value</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>根据键获取hash对象对应的值</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">het key field</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>判断key中是否存在field键（0或1对应不存在和存在）</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexists key field</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>获取hash对象中键的数量</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hlen key</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>根据 key  field删除键值对象</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hdel key field</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>自增/自减（指定步长）</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hincrby key filed  [num]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>获取hash对象对应的键有哪些</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hkeys key</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>获取hash对象所有的值</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hvals key</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>获取hash对象中所有的数据（键值）</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hgetall ke</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>表示存在时则不设置键值 ，不存在时设置键值 （相当于setnx）</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hsetnx user name  johny</span><br></pre></td></tr></table></figure>
+
+<h3 id="图示-1"><a href="#图示-1" class="headerlink" title="图示"></a>图示</h3><p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220907202911.png" alt="image-20220907202911774"></p>
+<h2 id="三，List类型"><a href="#三，List类型" class="headerlink" title="三，List类型"></a>三，List类型</h2><blockquote>
+<p>定义和优缺点以及适用场景待补充</p>
+</blockquote>
+<h3 id="命令-2"><a href="#命令-2" class="headerlink" title="命令"></a>命令</h3><ul>
+<li>向列表（队列）右侧中加入数据(键值)</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpush key value</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>从表头（左向右取数据）end 为 -1时表示取得所有的数据 </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lrange key start end</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>从列表左侧(表头)加入数据</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lpush key value</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>从队列的左侧（列表的表头）消费元素-获取到该元素且从队列中删除</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lpop key</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>从队列右侧（列表的表尾） 消费元素-取到该元素且从队列中删除 </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpop key</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>获取队列中当前的所有元素的个数</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">llen key</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>表示再refVal(关键字) 之前或者之后插入 newVal </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">linsert key before/after refVal newVal</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>表示在队列中根据索引进行修改值</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lset key index value</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>表示删除队列中count个 value</p>
+<ul>
+<li>count  =  0的情况，删除队列中所有的 这个元素</li>
+<li>count &gt;0的情况 ，最多删除count 个关键字</li>
+<li>count&lt;0的情况，最多删除count绝对值个关键字</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lrem key count value</span><br></pre></td></tr></table></figure>
+
+<h3 id="图示-2"><a href="#图示-2" class="headerlink" title="图示"></a>图示</h3><p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220907205925.png" alt="image-20220907205925070"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://kairong6.gitee.io/2022/10/23/redis%E5%9F%BA%E7%A1%8001/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -679,248 +921,6 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">info</span><br></pre></td></tr></table></figure>
 
 <h2 id="图示-3"><a href="#图示-3" class="headerlink" title="图示"></a>图示</h2><p>info<img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220909165457.png" alt="image-20220909165457438"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kairong6.gitee.io/2022/10/23/redis%E5%9F%BA%E7%A1%8002/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ckr.png">
-      <meta itemprop="name" content="Kairong">
-      <meta itemprop="description" content="若想得到未得到的东西，必先做从未做过的事">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ckrの博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/10/23/redis%E5%9F%BA%E7%A1%8002/" class="post-title-link" itemprop="url">redis基础02</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-10-23 17:36:48 / 修改时间：17:41:56" itemprop="dateCreated datePublished" datetime="2022-10-23T17:36:48+08:00">2022-10-23</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Redis%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Redis基础</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Redis命令"><a href="#Redis命令" class="headerlink" title="Redis命令"></a>Redis命令</h1><h2 id="一，String类型"><a href="#一，String类型" class="headerlink" title="一，String类型"></a>一，String类型</h2><h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><ul>
-<li>修改或保存key以及value值</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set key value</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>根据key的值获取value的值</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">get key</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>将key对应的value进行递增 +1</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">incr key</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>将Key对应的value进行递增（指定步长）</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">incrby  key num</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>将key对应的value进行递减  -1</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">decr key</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>根据key去删除键值对(1对应删除成功)</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del key</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>设置key-value同时这是对应的有效期 （timeout  s）</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setex key timeout value</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>表示剩余时间 ，-2表示键是过期的/键值对不存在</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ttl key</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>表示键存在则不做任何操作/不存在则新增一个key-value</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setnx key value</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>设置多个键值对 -批量操作</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mset k1 v1</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>根据多个key获取对应的value(只要在db中都可以获取)</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mget k1</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>表示给某个key对应的value进行追加 最终返回是value的最终的长度</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">append key value</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>表示根据下标进行替换/修改</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setrange key  index  value</span><br></pre></td></tr></table></figure>
-
-<h3 id="图示"><a href="#图示" class="headerlink" title="图示"></a>图示</h3><p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220907200816.png" alt="image-20220907200816208"></p>
-<h2 id="二，Hash类型"><a href="#二，Hash类型" class="headerlink" title="二，Hash类型"></a>二，Hash类型</h2><blockquote>
-<p>定义和优缺点以及适用场景待补充</p>
-</blockquote>
-<h3 id="命令-1"><a href="#命令-1" class="headerlink" title="命令"></a>命令</h3><ul>
-<li>存放Hash对象</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hset key field value</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>根据键获取hash对象对应的值</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">het key field</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>判断key中是否存在field键（0或1对应不存在和存在）</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexists key field</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>获取hash对象中键的数量</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hlen key</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>根据 key  field删除键值对象</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hdel key field</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>自增/自减（指定步长）</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hincrby key filed  [num]</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>获取hash对象对应的键有哪些</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hkeys key</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>获取hash对象所有的值</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hvals key</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>获取hash对象中所有的数据（键值）</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hgetall ke</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>表示存在时则不设置键值 ，不存在时设置键值 （相当于setnx）</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hsetnx user name  johny</span><br></pre></td></tr></table></figure>
-
-<h3 id="图示-1"><a href="#图示-1" class="headerlink" title="图示"></a>图示</h3><p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220907202911.png" alt="image-20220907202911774"></p>
-<h2 id="三，List类型"><a href="#三，List类型" class="headerlink" title="三，List类型"></a>三，List类型</h2><blockquote>
-<p>定义和优缺点以及适用场景待补充</p>
-</blockquote>
-<h3 id="命令-2"><a href="#命令-2" class="headerlink" title="命令"></a>命令</h3><ul>
-<li>向列表（队列）右侧中加入数据(键值)</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpush key value</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>从表头（左向右取数据）end 为 -1时表示取得所有的数据 </li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lrange key start end</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>从列表左侧(表头)加入数据</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lpush key value</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>从队列的左侧（列表的表头）消费元素-获取到该元素且从队列中删除</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lpop key</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>从队列右侧（列表的表尾） 消费元素-取到该元素且从队列中删除 </li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpop key</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>获取队列中当前的所有元素的个数</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">llen key</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>表示再refVal(关键字) 之前或者之后插入 newVal </li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">linsert key before/after refVal newVal</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>表示在队列中根据索引进行修改值</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lset key index value</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>表示删除队列中count个 value</p>
-<ul>
-<li>count  =  0的情况，删除队列中所有的 这个元素</li>
-<li>count &gt;0的情况 ，最多删除count 个关键字</li>
-<li>count&lt;0的情况，最多删除count绝对值个关键字</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lrem key count value</span><br></pre></td></tr></table></figure>
-
-<h3 id="图示-2"><a href="#图示-2" class="headerlink" title="图示"></a>图示</h3><p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220907205925.png" alt="image-20220907205925070"></p>
 
       
     </div>
