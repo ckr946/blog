@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>work_log1</title>
+      <link href="/2023/02/17/work-log1/"/>
+      <url>/2023/02/17/work-log1/</url>
+      
+        <content type="html"><![CDATA[<p>一，KDS及IP</p><table><thead><tr><th align="center">名称</th><th align="center">IP</th><th align="center">备注</th></tr></thead><tbody><tr><td align="center">外送</td><td align="center">101.1.1.16</td><td align="center">无</td></tr><tr><td align="center">打印机</td><td align="center">101.1.1.36</td><td align="center">外送的</td></tr><tr><td align="center">堂食</td><td align="center">101.1.1.18</td><td align="center">无</td></tr><tr><td align="center">打印机</td><td align="center">101.1.1.38</td><td align="center">堂食的</td></tr><tr><td align="center">汉堡</td><td align="center">101.1.1.26</td><td align="center">无</td></tr><tr><td align="center">水吧</td><td align="center">101.1.1.27</td><td align="center">无</td></tr></tbody></table><p>二，2G及IP</p><table><thead><tr><th align="center">名称</th><th align="center">IP</th><th align="center">备注</th></tr></thead><tbody><tr><td align="center">总配</td><td align="center">101.1.1.100</td><td align="center">无</td></tr><tr><td align="center">打印机</td><td align="center">101.1.1.136</td><td align="center">总配的</td></tr><tr><td align="center">厨房</td><td align="center">101.1.1.101</td><td align="center">无</td></tr><tr><td align="center">打印机</td><td align="center">101.1.1.137</td><td align="center">厨房的</td></tr></tbody></table><p>三，其他及IP</p><table><thead><tr><th align="center">名称</th><th align="center">IP</th><th align="center">备注</th></tr></thead><tbody><tr><td align="center">茶饮打印机</td><td align="center">101.1.1.46</td><td align="center">无</td></tr><tr><td align="center">经理室打印机</td><td align="center">101.1.1.27</td><td align="center">无</td></tr><tr><td align="center">叫号屏</td><td align="center">10.110.0.12</td><td align="center">无</td></tr><tr><td align="center">音乐</td><td align="center">10.110.0.10</td><td align="center">无</td></tr><tr><td align="center">收银机</td><td align="center">101.1.1.201</td><td align="center">两个则递增</td></tr><tr><td align="center">监控一</td><td align="center">10.110.0.250</td><td align="center">pwd:64968787</td></tr><tr><td align="center">监控二</td><td align="center">10.100.0.251</td><td align="center">无</td></tr></tbody></table><p>四，防火墙接口说明</p><style>  td {    text-align: center;  }</style><table >    <tr>        <td>防火墙</td>        <td>接口号</td>        <td>对接硬件</td>    </tr>    <tr>        <td rowspan='5'>H3C防火墙</td>        <td>一号</td>        <td>DMB屏</td>    </tr>    <tr>        <td>二号</td>        <td>WIFI</td>    </tr>    <tr>        <td>三号</td>        <td>交换机</td>    </tr>    <tr>        <td>四号</td>        <td>外网（光猫）</td>    </tr></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> work </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> work_log </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>work_day01</title>
       <link href="/2023/02/08/work-day01/"/>
       <url>/2023/02/08/work-day01/</url>
