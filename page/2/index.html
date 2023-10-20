@@ -126,17 +126,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">20</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">21</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">10</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">11</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">25</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">26</span></a>
 
   </li>
         <li class="menu-item menu-item-favorite">
@@ -190,6 +190,194 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://kairong6.gitee.io/2022/04/12/spring-mvc2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/ckr.png">
+      <meta itemprop="name" content="Kairong">
+      <meta itemprop="description" content="若想得到未得到的东西，必先做从未做过的事">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ckrの博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/04/12/spring-mvc2/" class="post-title-link" itemprop="url">spring-mvc2</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-04-12 23:34:24" itemprop="dateCreated datePublished" datetime="2022-04-12T23:34:24+08:00">2022-04-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-05-27 02:20:48" itemprop="dateModified" datetime="2022-05-27T02:20:48+08:00">2022-05-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="转发和重定向"><a href="#转发和重定向" class="headerlink" title="转发和重定向"></a>转发和重定向</h1><h2 id="表面区别"><a href="#表面区别" class="headerlink" title="表面区别"></a>表面区别</h2><ul>
+<li><p>从地址栏显示来说</p>
+<ul>
+<li>forward是服务器请求资源,服务器直接访问目标地址的URL,把那个URL的响应内容读取过来,然后把这些内容再发给浏览器.浏览器根本不知道服务器发送的内容从哪里来的,所以它的地址栏还是原来的地址.</li>
+<li>redirect是服务端根据逻辑,发送一个状态码,告诉浏览器重新去请求那个地址.所以地址栏显示的是新的URL.</li>
+</ul>
+</li>
+<li><p>从数据共享来说</p>
+<ul>
+<li>forward:转发页面和转发到的页面可以共享request里面的数据.</li>
+<li>redirect:不能共享数据.</li>
+</ul>
+</li>
+<li><p>从运用地方来说</p>
+<ul>
+<li>forward:一般用于用户登陆的时候,根据角色转发到相应的模块.</li>
+<li>redirect:一般用于用户注销登陆时返回主页面和跳转到其它的网站等</li>
+</ul>
+</li>
+<li><p>从效率来说</p>
+<ul>
+<li>forward:高.</li>
+<li>redirect:低.</li>
+</ul>
+</li>
+</ul>
+<h2 id="本质区别"><a href="#本质区别" class="headerlink" title="本质区别"></a>本质区别</h2><h3 id="解释一"><a href="#解释一" class="headerlink" title="解释一"></a>解释一</h3><ul>
+<li><p>一句话，转发是服务器行为，重定向是客户端行为。</p>
+</li>
+<li><p>转发过程：客户浏览器发送http请求—-》web服务器接受此请求–》调用内部的一个方法在容器内部完成请求处理和转发动作—-》将目标资源发送给客户;在这里，转发的路径必须是同一个web容器下的url，其不能转向到其他的web路径上去，中间传递的是自己的容器内的request。在客户浏览器路径栏显示的仍然是其第一次访问的路径，也就是说客户是感觉不到服务器做了转发的。转发行为是浏览器只做了一次访问请求。</p>
+</li>
+<li><p>重定向过程：客户浏览器发送http请求—-》web服务器接受后发送302状态码响应及对应新的location给客户浏览器–》客户浏览器发现是302响应，则自动再发送一个新的http请求，请求url是新的location地址—-》服务器根据此请求寻找资源并发送给客户。在这里 location可以重定向到任意URL，既然是浏览器重新发出了请求，则就没有什么request传递的概念了。在客户浏览器路径栏显示的是其重定向的路径，客户可以观察到地址的变化的。重定向行为是浏览器做了至少两次的访问请求的。</p>
+</li>
+</ul>
+<h3 id="解释二"><a href="#解释二" class="headerlink" title="解释二"></a>解释二</h3><ul>
+<li><p>重定向，其实是两次request,第一次，客户端request A,服务器响应，并response回来，告诉浏览器，你应该去B。这个时候IE可以</p>
+<p>到地址变了，而且历史的回退按钮也亮了。重定向可以访问自己web应用以外的资源。在重定向的过程中，传输的信息会被丢失。</p>
+</li>
+<li><p>例子：请求转发是服务器内部把对一个request/response的处理权，移交给另外一个端口，对于客户端而言，它只知道自己最早请求的那个A，而不知道中间的B，甚至C、D。 传输的信息不会丢失。</p>
+</li>
+</ul>
+<h3 id="解释三"><a href="#解释三" class="headerlink" title="解释三"></a>解释三</h3><ul>
+<li>转发是服务器行为，重定向是客户端行为。</li>
+</ul>
+<h2 id="内部机制区别"><a href="#内部机制区别" class="headerlink" title="内部机制区别"></a>内部机制区别</h2><ul>
+<li><p> 请求转发只能将请求转发给同一个WEB应用中的组件，而重定向还可以重新定向到同一站点不同应用程序中的资源，甚至可以定向到一绝对的URL。</p>
+</li>
+<li><p>重定向可以看见目标页面的URL，转发只能看见第一次访问的页面URL，以后的工作都是有服务器来做的。</p>
+</li>
+<li><p>请求响应调用者和被调用者之间共享相同的request对象和response对象，重定向调用者和被调用者属于两个独立访问请求和响应过程。</p>
+</li>
+<li><p>重定向跳转后必须加上return，要不然页面虽然跳转了，但是还会执行跳转后面的语句，转发是执行了跳转页面，下面的代码就不会在执行了。</p>
+</li>
+</ul>
+<h2 id="实例应用"><a href="#实例应用" class="headerlink" title="实例应用"></a>实例应用</h2><ul>
+<li>代码续集上一篇文章<a href="https://kairong6.gitee.io/2022/04/12/spring-mvc1/">spring-mvc1</a></li>
+</ul>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
+<li>在webapp目录下构建如图目录结构以及jsp文件</li>
+</ul>
+<p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220413013227.png" alt="image-20220413013227195"></p>
+<ul>
+<li>test1.jsp</li>
+</ul>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page contentType=<span class="string">&quot;text/html;charset=UTF-8&quot;</span> language=<span class="string">&quot;java&quot;</span> isELIgnored=<span class="string">&quot;false&quot;</span>%&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h1&gt;tes1.jsp&lt;/h1&gt;</span><br><span class="line">$&#123;key1&#125;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>test2.jsp</li>
+</ul>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page contentType=<span class="string">&quot;text/html;charset=UTF-8&quot;</span> language=<span class="string">&quot;java&quot;</span> isELIgnored=<span class="string">&quot;false&quot;</span>%&gt;</span><br><span class="line"></span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h1&gt;one.jps&lt;/h1&gt;</span><br><span class="line">$&#123;key1&#125;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="代码编辑"><a href="#代码编辑" class="headerlink" title="代码编辑"></a>代码编辑</h3><ul>
+<li><p>在FirstController.java中继续进行编辑</p>
+<p>FirstController.java</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.kairong.springmvc.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.ModelAndView;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FirstController</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 转发</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/one.do&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">get1</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;进入控制器！FirstController&quot;</span>);</span><br><span class="line">        <span class="comment">//springmvc实现传统方式的转发</span></span><br><span class="line">        request.setAttribute(<span class="string">&quot;key1&quot;</span>,<span class="string">&quot;传统方式携带的数据&quot;</span>);</span><br><span class="line">        request.getRequestDispatcher(<span class="string">&quot;forward:jsp/test1.jsp&quot;</span>).forward(request,response);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/two.do&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">get3</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;进入控制器！TwoController&quot;</span>);</span><br><span class="line">        <span class="comment">//springmvc特有的方式实现转发</span></span><br><span class="line">        ModelAndView mav=<span class="keyword">new</span> ModelAndView() ;</span><br><span class="line">        mav.setViewName(<span class="string">&quot;forward:jsp/test1.jsp&quot;</span>);</span><br><span class="line"><span class="comment">//        mav.setViewName(&quot;test2&quot;);</span></span><br><span class="line">        mav.addObject(<span class="string">&quot;key1&quot;</span>,<span class="string">&quot;springmvc特有的方式携带的数据&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> mav;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 重定向</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/three.do&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">get4</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;进入控制器！ThreeController&quot;</span>);</span><br><span class="line">        <span class="comment">//传统方式的重定向</span></span><br><span class="line">        request.setAttribute(<span class="string">&quot;key1&quot;</span>,<span class="string">&quot;重定向传统方式携带的数据&quot;</span>);</span><br><span class="line">        request.getSession().setAttribute(<span class="string">&quot;key1&quot;</span>,<span class="string">&quot;重定向传统方式携带的数据存放在session作用域中&quot;</span>);</span><br><span class="line"><span class="comment">//        response.sendRedirect(&quot;https://www.baidu.com/&quot;);</span></span><br><span class="line">        response.sendRedirect(<span class="string">&quot;jsp/test1.jsp&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/four.do&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">get</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;进入控制器！FourController&quot;</span>);</span><br><span class="line">        <span class="comment">//springmvc使用特有重定向方式携带数据跳转</span></span><br><span class="line">        ModelAndView mav= <span class="keyword">new</span> ModelAndView() ;</span><br><span class="line">        mav.addObject(<span class="string">&quot;key1&quot;</span>,<span class="string">&quot;springmvc特有的重定向方式携带的数据&quot;</span>);</span><br><span class="line">        request.getSession().setAttribute(<span class="string">&quot;key1&quot;</span>,<span class="string">&quot;springmvc特有的重定向方式携带的数据放在session作用域中&quot;</span>);</span><br><span class="line">        mav.setViewName(<span class="string">&quot;redirect:jsp/test1.jsp&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> mav;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>相关测试以及结果</p>
+<ul>
+<li><p>分别在浏览器地址栏输入以下地址</p>
+<ul>
+<li>localhost:8081/one.do</li>
+<li>localhost:8081/two.do</li>
+<li>localhost:8081/three.do</li>
+<li>localhost:8081/four.do</li>
+</ul>
+</li>
+<li><p>浏览器页面会跳转到test1.jsp并成功将后端发送的数据显示在前端</p>
+</li>
+</ul>
+<h3 id="地址路径优化"><a href="#地址路径优化" class="headerlink" title="地址路径优化"></a>地址路径优化</h3><ul>
+<li><p>考虑到如果jsp资源路径过长，那么会对程序员不友好</p>
+</li>
+<li><p>于是可以在spring核心配置文件spring-mvc添加jsp视图解析器</p>
+</li>
+<li><p>需要注意的是该解析器只能使用spring-mvc特有的转发</p>
+</li>
+<li><p>并且目标路径不能带上<strong>forward:</strong></p>
+<p>spring-mvc.xml</p>
+</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="string"><span class="tag">       http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--关联 bean.xml--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">import</span> <span class="attr">resource</span>=<span class="string">&quot;classpath:bean.xml&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--配置视图解析器 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span>  <span class="attr">class</span>=<span class="string">&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;prefix&quot;</span> <span class="attr">value</span>=<span class="string">&quot;WEB-INF/views/&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;suffix&quot;</span> <span class="attr">value</span>=<span class="string">&quot;.jsp&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="测试用例"><a href="#测试用例" class="headerlink" title="测试用例"></a>测试用例</h4><ul>
+<li>在FristController.java的<strong>get2</strong>方法中将如下第一行代码替换成第二行</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mav.setViewName(&quot;forward:jsp/test1.jsp&quot;); </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mav.setViewName(<span class="string">&quot;test2&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>分别在浏览器地址栏输入localhost:8081/two.do</li>
+<li>浏览器页面会跳转到test1.jsp并成功将后端发送的数据显示在前端</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -1497,210 +1685,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kairong6.gitee.io/2022/03/12/mysql/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/ckr.png">
-      <meta itemprop="name" content="Kairong">
-      <meta itemprop="description" content="若想得到未得到的东西，必先做从未做过的事">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ckrの博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/03/12/mysql/" class="post-title-link" itemprop="url">mysql</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-03-12 19:50:05" itemprop="dateCreated datePublished" datetime="2022-03-12T19:50:05+08:00">2022-03-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-27 02:20:48" itemprop="dateModified" datetime="2022-05-27T02:20:48+08:00">2022-05-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/mysql%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">mysql基础</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="sql重点语法"><a href="#sql重点语法" class="headerlink" title="sql重点语法"></a>sql重点语法</h2><p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220312144408.png" alt="image-20220312144408615"></p>
-<p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220312144439.png" alt="image-20220312144439088"></p>
-<p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220312144458.png" alt="image-20220312144458541"></p>
-<p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220312193934.png" alt="image-20220312193934858"></p>
-<p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220312193956.png" alt="image-20220312193956122"></p>
-<p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220312194013.png" alt="image-20220312194013669"></p>
-<p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220312194030.png" alt="image-20220312194030874"></p>
-<p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220312194102.png" alt="image-20220312194102632"></p>
-<p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220312194150.png" alt="image-20220312194150450"></p>
-<p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220312194211.png" alt="image-20220312194211843"></p>
-<p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220312194234.png" alt="image-20220312194234274"></p>
-<p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220312194253.png" alt="image-20220312194253202"></p>
-<p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220312194322.png" alt="image-20220312194322319"></p>
-<p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220312194336.png" alt="image-20220312194336819"></p>
-<p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220312194351.png" alt="image-20220312194351814"></p>
-<h2 id="sql练习（表见附件）"><a href="#sql练习（表见附件）" class="headerlink" title="sql练习（表见附件）"></a>sql练习（表见附件）</h2><h3 id="第一阶段"><a href="#第一阶段" class="headerlink" title="第一阶段"></a>第一阶段</h3><p>查询所有员工的年薪((月薪 + 奖金) * 12)</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ENAME,(ifnull(comm,<span class="number">0</span>)<span class="operator">+</span>sal)<span class="operator">*</span><span class="number">12</span> <span class="keyword">from</span> emp;</span><br></pre></td></tr></table></figure>
-
-<p>查询有奖金的员工信息</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ISNULL(COMM),ENAME <span class="keyword">from</span> emp;</span><br></pre></td></tr></table></figure>
-
-<p>查询公司的老板</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> DEPTNO,MGR <span class="keyword">from</span> emp;</span><br></pre></td></tr></table></figure>
-
-<p>查询出基本工资高于 1500 的所有员工信息</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ENAME,sal <span class="keyword">from</span> emp <span class="keyword">WHERE</span> sal<span class="operator">&gt;=</span><span class="number">1500</span>;</span><br></pre></td></tr></table></figure>
-
-<p>查询名字叫 SCOTT 的员工所从事的工作</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ENAME,JOB <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> ENAME<span class="operator">=</span> &quot;SCOTT&quot;;</span><br></pre></td></tr></table></figure>
-
-<p>查询 1981 年入职的员工信息</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> EMP <span class="keyword">WHERE</span> HIREDATE <span class="keyword">like</span> <span class="string">&#x27;1981-__-__&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p>查询年薪小于 3W 的员工</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ENAME,(ifnull(comm,<span class="number">0</span>)<span class="operator">+</span>sal)<span class="operator">*</span><span class="number">12</span> <span class="keyword">from</span> emp <span class="keyword">WHERE</span> (ifnull(comm,<span class="number">0</span>)<span class="operator">+</span>sal)<span class="operator">*</span><span class="number">12</span><span class="operator">&lt;=</span><span class="number">30000</span>;</span><br></pre></td></tr></table></figure>
-
-<p>查询所有不是销售人员的员工信息</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ENAME,JOB <span class="keyword">from</span> emp <span class="keyword">WHERE</span> job <span class="operator">!=</span> &quot;CLERK&quot;;</span><br></pre></td></tr></table></figure>
-
-<p>查询工资在 2000-3000 之间的员工信息</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ENAME,sal <span class="keyword">from</span> emp <span class="keyword">WHERE</span> sal <span class="keyword">BETWEEN</span> <span class="number">2000</span> <span class="keyword">and</span> <span class="number">3000</span>;</span><br></pre></td></tr></table></figure>
-
-<p>查询 1981 年入职的员工</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ENAME,HIREDATE <span class="keyword">FROM</span> EMP <span class="keyword">WHERE</span> HIREDATE <span class="keyword">like</span> &quot;1981-__-__&quot;;</span><br></pre></td></tr></table></figure>
-
-<p>查询工资为 800 或 1600 或 3000 的员工</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ENAME,sal <span class="keyword">from</span> emp <span class="keyword">WHERE</span> sal <span class="operator">=</span><span class="number">800</span> <span class="keyword">OR</span> sal<span class="operator">=</span> <span class="number">1600</span> <span class="keyword">or</span> sal<span class="operator">=</span> <span class="number">3000</span>;</span><br></pre></td></tr></table></figure>
-
-<p>查询出所有雇员姓名是以 A 开头的全部雇员信息。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">WHERE</span> ENAME <span class="keyword">like</span> &quot;A%&quot;; </span><br></pre></td></tr></table></figure>
-
-<p>查询出雇员姓名第二个字母是 M 的全部雇员信息。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">WHERE</span> ENAME <span class="keyword">like</span> &quot;_M%&quot;;</span><br></pre></td></tr></table></figure>
-
-<p>查询出雇员姓名任意位置上包含字母 A 的全部雇员信息。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">WHERE</span> ENAME <span class="keyword">like</span> &quot;%A%&quot;;</span><br></pre></td></tr></table></figure>
-
-<p>查询姓名中有 e 或者 a 的员工姓名</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">WHERE</span> ENAME <span class="keyword">like</span>&quot;%e%&quot; <span class="keyword">or</span> ENAME <span class="keyword">like</span> <span class="string">&#x27;%a%&#x27;</span>; </span><br></pre></td></tr></table></figure>
-
-<p>查询工资在 1500~3000 之间的全部员工信息</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> sal <span class="keyword">BETWEEN</span> <span class="number">1500</span> <span class="keyword">and</span> <span class="number">3000</span>;</span><br></pre></td></tr></table></figure>
-
-<p>查询工资不在 2000-3000 之间的员工信息</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> sal <span class="operator">&lt;</span><span class="number">2000</span> <span class="keyword">or</span> sal <span class="operator">&gt;</span><span class="number">3000</span>;</span><br></pre></td></tr></table></figure>
-
-<p>查询工资不为 800 或 1600 或 3000 的员工</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> sal <span class="operator">!=</span><span class="number">800</span> <span class="keyword">or</span> sal <span class="operator">!=</span><span class="number">1600</span> <span class="keyword">or</span> sal <span class="operator">!=</span><span class="number">3000</span>;</span><br></pre></td></tr></table></figure>
-
-<p>查询出职位是办事员 (CLERK) 或者是销售人员 (SALESMAN) 的全部信息，且工资在 1000 以上</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> emp <span class="keyword">WHERE</span> SAL<span class="operator">&gt;</span><span class="number">1000</span> <span class="keyword">and</span> job <span class="operator">=</span> <span class="string">&#x27;CLERK&#x27;</span> <span class="keyword">OR</span> JOB <span class="operator">=</span> <span class="string">&#x27;SALESMAN&#x27;</span> <span class="keyword">AND</span> SAL<span class="operator">&gt;</span><span class="number">1000</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="第二阶段"><a href="#第二阶段" class="headerlink" title="第二阶段"></a>第二阶段</h3><p>查询员工编号，员工名称，员工所属部门的编号和名称<br>#隐式内连接</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> e.empno , e.ename, d.deptno,d.dname <span class="keyword">from</span> emp <span class="keyword">as</span> e, dept <span class="keyword">as</span> d <span class="keyword">where</span> e.deptno <span class="operator">=</span> d.deptno</span><br></pre></td></tr></table></figure>
-
-<p>#显式内连接</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> e.empno,e.ename,d.deptno,d.dname <span class="keyword">from</span> emp <span class="keyword">as</span> e <span class="keyword">inner</span> <span class="keyword">join</span> dept <span class="keyword">as</span> d <span class="keyword">on</span> e.deptno <span class="operator">=</span> d.deptno</span><br></pre></td></tr></table></figure>
-
-<p>查询员工的姓名，工资，所在部门的名称，以及工资的等级<br>#隐式内连接</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> e.ename,e.sal,d.dname,s.grade <span class="keyword">from</span> emp <span class="keyword">as</span> e,dept <span class="keyword">as</span> d,salgrade <span class="keyword">as</span> s <span class="keyword">where</span> e.deptno<span class="operator">=</span>d.deptno <span class="keyword">and</span> e.sal <span class="keyword">between</span> s.losal <span class="keyword">and</span> s.hisal</span><br></pre></td></tr></table></figure>
-
-<p>#显式内连接</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> e.ename,e.sal,d.dname,s.grade <span class="keyword">from</span> emp <span class="keyword">as</span> e <span class="keyword">inner</span> <span class="keyword">join</span> dept <span class="keyword">as</span> d <span class="keyword">on</span> e.deptno<span class="operator">=</span>d.deptno <span class="keyword">inner</span> <span class="keyword">join</span> salgrade <span class="keyword">as</span> s <span class="keyword">on</span> e.sal <span class="keyword">between</span> s.losal <span class="keyword">and</span> s.hisal </span><br></pre></td></tr></table></figure>
-
-<p>#左外连接</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> emp.EMPNO, emp.ENAME, emp.SAL, dept.DNAME <span class="keyword">FROM</span> emp <span class="keyword">left</span> <span class="keyword">JOIN</span> dept <span class="keyword">ON</span> emp.DEPTNO <span class="operator">=</span> dept.DEPTNO</span><br></pre></td></tr></table></figure>
-
-<p>#右外连接</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> emp.EMPNO, emp.ENAME, emp.SAL, dept.DNAME <span class="keyword">FROM</span> emp <span class="keyword">right</span> <span class="keyword">JOIN</span> dept <span class="keyword">ON</span> emp.DEPTNO <span class="operator">=</span> dept.DEPTNO</span><br></pre></td></tr></table></figure>
-
-<p>查询所有员工每个月的平均工资及总工资</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">avg</span>(sal) <span class="keyword">as</span> avgSal,<span class="built_in">sum</span>(sal) <span class="keyword">as</span> sumSal <span class="keyword">from</span> emp</span><br></pre></td></tr></table></figure>
-
-<p>查询月薪在 2000 以上的员工总人数</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">from</span> emp <span class="keyword">where</span> sal<span class="operator">&gt;</span><span class="number">2000</span></span><br></pre></td></tr></table></figure>
-
-<p>查询员工最高工资和最低工资差距</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">max</span>(sal)<span class="operator">-</span><span class="built_in">min</span>(sal) <span class="keyword">from</span> emp</span><br></pre></td></tr></table></figure>
-
-<p>按照职位分组，求出每个职位的最高和最低工资</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">max</span>(sal),<span class="built_in">min</span>(sal) <span class="keyword">from</span> emp <span class="keyword">group</span> <span class="keyword">by</span> job</span><br></pre></td></tr></table></figure>
-
-<p>查询出每一个部门员工的平均工资</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">avg</span>(sal) <span class="keyword">from</span> emp <span class="keyword">group</span> <span class="keyword">by</span> deptno</span><br></pre></td></tr></table></figure>
-
-<p>查询各个部门和岗位的平均工资</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">avg</span>(sal),deptno,job <span class="keyword">from</span> emp <span class="keyword">group</span> <span class="keyword">by</span> deptno,job</span><br></pre></td></tr></table></figure>
-
-<p>查询部门平均工资高于 2000 的部门及其平均工资</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">avg</span>(sal) <span class="keyword">from</span> emp <span class="keyword">group</span> <span class="keyword">by</span> deptno <span class="keyword">having</span> <span class="built_in">avg</span>(sal)<span class="operator">&gt;</span><span class="number">2000</span></span><br><span class="line"><span class="keyword">select</span> <span class="built_in">avg</span>(sal) <span class="keyword">as</span> avgSal <span class="keyword">from</span> emp <span class="keyword">group</span> <span class="keyword">by</span> deptno <span class="keyword">having</span> avgSal<span class="operator">&gt;</span><span class="number">2000</span></span><br></pre></td></tr></table></figure>
-
-<p>查询在 80, 81, 82 年各进公司多少人</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">year</span>(hiredate) <span class="keyword">as</span> y, <span class="built_in">count</span>(empno) <span class="keyword">from</span> emp <span class="keyword">group</span> <span class="keyword">by</span> y <span class="keyword">having</span> y <span class="keyword">between</span> <span class="string">&#x27;1980&#x27;</span> <span class="keyword">and</span> <span class="string">&#x27;1982&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>查询各个管理人员下员工的平均工资，其中最低工资不能低于 1300</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> mgr, <span class="built_in">avg</span>(sal),<span class="built_in">min</span>(sal) <span class="keyword">as</span> minSal <span class="keyword">from</span> emp <span class="keyword">group</span> <span class="keyword">by</span> mgr <span class="keyword">having</span> minsal<span class="operator">&gt;</span><span class="number">1300</span></span><br></pre></td></tr></table></figure>
-
-<p>查询大于平均工资的员工</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">avg</span>(sal) <span class="keyword">from</span> emp</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">where</span> sal<span class="operator">&gt;</span>(<span class="keyword">select</span> <span class="built_in">avg</span>(sal) <span class="keyword">from</span> emp)</span><br></pre></td></tr></table></figure>
-
-<p>查询出工资比 MARTIN 还要高的全部雇员信息</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> sal <span class="keyword">from</span> emp <span class="keyword">where</span> ename<span class="operator">=</span><span class="string">&#x27;martin&#x27;</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">where</span> sal<span class="operator">&gt;</span>(<span class="keyword">select</span> sal <span class="keyword">from</span> emp <span class="keyword">where</span> ename<span class="operator">=</span><span class="string">&#x27;martin&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>查询平均工资高于公司平均工资的部门信息</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">avg</span>(sal) <span class="keyword">from</span> emp</span><br><span class="line"><span class="keyword">select</span> <span class="built_in">avg</span>(sal) <span class="keyword">as</span> avgSal,d.deptno,d.dname <span class="keyword">from</span> emp <span class="keyword">as</span> e <span class="keyword">inner</span> <span class="keyword">join</span> dept <span class="keyword">as</span> d <span class="keyword">on</span> e.deptno<span class="operator">=</span>d.deptno  <span class="keyword">group</span> <span class="keyword">by</span> deptno <span class="keyword">having</span> avgSal<span class="operator">&gt;</span>(<span class="keyword">select</span> <span class="built_in">avg</span>(sal) <span class="keyword">from</span> emp)</span><br></pre></td></tr></table></figure>
-
-<p>查询工资等于部门经理（职位是 MANAGER）的员工信息。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> sal <span class="keyword">from</span> emp <span class="keyword">where</span> job <span class="operator">=</span><span class="string">&#x27;MA</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h2><p><a target="_blank" rel="noopener" href="https://gitee.com/kairong6/blog/blob/master/02_MySQL.pdf">sql语法文件</a></p>
-<p><a target="_blank" rel="noopener" href="https://gitee.com/kairong6/blog/blob/master/mysqlplus.sql">sql建表文件</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1772,20 +1756,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1806,7 +1790,7 @@
 	      <h3 class="widget-title">Tag Cloud</h3>
 	      <div id="myCanvasContainer" class="widget tagcloud">
 	          <canvas width="250" height="250" id="resCanvas" style="width=100%">
-	              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Aop/" rel="tag">Aop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DI/" rel="tag">DI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDBC/" rel="tag">JDBC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%9F%BA%E7%A1%80/" rel="tag">java基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mvc-%E8%BD%AC%E5%8F%91%E5%92%8C%E9%87%8D%E5%AE%9A%E5%90%91/" rel="tag">mvc 转发和重定向</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mvc-json/" rel="tag">mvc-json</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mvc%E5%85%A5%E9%97%A8/" rel="tag">mvc入门</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/one/" rel="tag">one</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springOne/" rel="tag">springOne</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work/" rel="tag">work</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work-log/" rel="tag">work_log</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/" rel="tag">上传和下载</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/" rel="tag">事务管理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" rel="tag">代理模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B4%E8%B4%A7%E5%BF%AB%E9%80%92/" rel="tag">年货快递</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B3%A8%E8%A7%A3/" rel="tag">注解</a><span class="tag-list-count">2</span></li></ul>
+	              <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Aop/" rel="tag">Aop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DI/" rel="tag">DI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDBC/" rel="tag">JDBC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java%E5%9F%BA%E7%A1%80/" rel="tag">java基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mvc-%E8%BD%AC%E5%8F%91%E5%92%8C%E9%87%8D%E5%AE%9A%E5%90%91/" rel="tag">mvc 转发和重定向</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mvc-json/" rel="tag">mvc-json</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mvc%E5%85%A5%E9%97%A8/" rel="tag">mvc入门</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/one/" rel="tag">one</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springOne/" rel="tag">springOne</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work/" rel="tag">work</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/work-log/" rel="tag">work_log</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/" rel="tag">上传和下载</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/" rel="tag">事务管理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" rel="tag">代理模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B4%E8%B4%A7%E5%BF%AB%E9%80%92/" rel="tag">年货快递</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B3%A8%E8%A7%A3/" rel="tag">注解</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B6%88%E8%B4%B9/" rel="tag">消费</a><span class="tag-list-count">1</span></li></ul>
 	          </canvas>
 	      </div>
 	  </div>
