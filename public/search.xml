@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>spring集成redis</title>
+      <link href="/2023/11/01/spring%E9%9B%86%E6%88%90redis/"/>
+      <url>/2023/11/01/spring%E9%9B%86%E6%88%90redis/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-启动redis后台服务"><a href="#1-启动redis后台服务" class="headerlink" title="1.启动redis后台服务"></a>1.启动redis后台服务</h3><h3 id="2-pom引入"><a href="#2-pom引入" class="headerlink" title="2.pom引入"></a>2.pom引入</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-data-redis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="3-项目使用"><a href="#3-项目使用" class="headerlink" title="3.项目使用"></a>3.项目使用</h3><ul><li><h3 id="yaml配置"><a href="#yaml配置" class="headerlink" title="yaml配置"></a>yaml配置</h3></li></ul><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">redis:</span></span><br><span class="line">    <span class="attr">host:</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line">    <span class="attr">port:</span> <span class="number">6379</span></span><br><span class="line">    <span class="attr">database:</span> <span class="number">0</span></span><br><span class="line">    <span class="attr">password:</span> <span class="number">123456</span></span><br></pre></td></tr></table></figure><ul><li><h3 id="代码使用"><a href="#代码使用" class="headerlink" title="代码使用"></a>代码使用</h3><p>1.依赖注入（String类型）</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> StringRedisTemplate stringRedisTemplate;</span><br></pre></td></tr></table></figure><p>2.key设计</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//乘客验证码前缀</span></span><br><span class="line"><span class="keyword">private</span> String verificationCodePrefix = <span class="string">&quot;passenger:verificationCode:&quot;</span>;</span><br></pre></td></tr></table></figure><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//key</span></span><br><span class="line">String key = verificationCodePrefix + passengerPhone;</span><br></pre></td></tr></table></figure><p>3.存取操作</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//存入redis,设置过期时间</span></span><br><span class="line">stringRedisTemplate.opsForValue().set(key, String.valueOf(numberCode),<span class="number">2</span>, TimeUnit.MINUTES);</span><br><span class="line"><span class="comment">//redis按照key读取值</span></span><br><span class="line">String value = stringRedisTemplate.opsForValue().get(key);</span><br></pre></td></tr></table></figure></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 集成 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> redis，spring </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>成都</title>
       <link href="/2023/10/20/%E6%88%90%E9%83%BD/"/>
       <url>/2023/10/20/%E6%88%90%E9%83%BD/</url>
