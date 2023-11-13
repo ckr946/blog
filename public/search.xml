@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>下载历史版本JDK</title>
+      <link href="/2023/11/13/%E4%B8%8B%E8%BD%BD%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%ACJDK/"/>
+      <url>/2023/11/13/%E4%B8%8B%E8%BD%BD%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%ACJDK/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>日常工作中由于一些特殊原因，我们需要下载指定系统指定位数指定版本的jdk，这个时候去网上搜索下载就会遇到各种坑，病毒、诱导连接、诱导关注/注册、付费、错误版本等，所以最好的办法是去官网下载，下面列举两种方式简单快捷从oracle官网下载各历史版本jdk.</p></blockquote><h2 id="方式一"><a href="#方式一" class="headerlink" title="方式一"></a>方式一</h2><blockquote><p>直接访问历史版本下载页</p></blockquote><ul><li> 访问jdk历史版本下载地址：：<a href="https://www.oracle.com/java/technologies/downloads/archive/">Java Archive | Oracle</a>，然后选择所需版本后选择对应系统进行下载</li></ul><p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/image-20231113210049462.png" alt="image-20231113210049462"></p><h2 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h2><blockquote><p>从官网跳转到历史页面</p></blockquote><blockquote><p>由于上述地址经常发生变化，所以我们用另外一种方法，从官网跳转到历史页面</p></blockquote><ul><li><strong>第一步：进入官网找到java产品</strong></li></ul><p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/image-20231114000858520.png" alt="image-20231114000858520"></p><ul><li><strong>第二步：进入下载</strong><ul><li>进入java页面后找到【Download Java】按钮，由于页面更新的原因，位置可能不一样</li></ul></li></ul><p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/image-20231114003542834.png" alt="image-20231114003542834"></p><ul><li><strong>第三步：选择大版本</strong><ul><li>进入下download页面后如下所示，选择【Java archive】页签 饼选择【Java SE】，然后选择JDK的大版本(以jdk7为例)</li></ul></li></ul><p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/image-20231114005628576.png" alt="image-20231114005628576"></p><ul><li>接着</li></ul><p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/image-20231114012455048.png" alt="image-20231114012455048"></p><ul><li>第四步：选择具体的版本进行下载<ul><li>进入页面后选择【Java SE Development Kit】开头的标签然后选择对应操作系统的rpm或者tar包进行下载即可(个人更偏向于tar包的方式，可控性更高)，下载可能会需要登录，注册个账号即可</li><li>Java SE Development Kit：简称JDK，java开发工具，其中包含jre,所以直接下载这个即可</li><li>Java SE Runtime Environment：检测JRE，java运行环境</li></ul></li></ul><p><img src="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/image-20231114031012578.png" alt="image-20231114031012578"></p><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><blockquote><p>其他常用工具下载地址，包括但不限于</p></blockquote><p><a href="https://archive.apache.org/dist/tomcat/">tomcat </a></p><p><a href="https://archive.apache.org/dist/kafka/">kafka</a></p><p><a href="https://archive.apache.org/dist/flink/">flink</a></p><p><a href="https://archive.apache.org/dist/hbase/">hbase</a></p><p><a href="https://archive.apache.org/dist/hive/">hive</a></p><p><a href="https://archive.apache.org/dist/zookeeper/">zookeeper</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> JDK </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JDK </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>spring集成nacos</title>
       <link href="/2023/11/11/spring%E9%9B%86%E6%88%90nacos/"/>
       <url>/2023/11/11/spring%E9%9B%86%E6%88%90nacos/</url>
