@@ -67,7 +67,8 @@ function loadWidget(config) {
 				const script = document.createElement("script");
 				// script.src = "https://cdn.jsdelivr.net/gh/stevenjoezhang/asteroids/asteroids.js";
 				// script.src = "https://gitee.com/kairong6/api/blob/master/asteroids.js";
-				script.src = "https://kairong6.gitee.io/api/asteroids.js";
+				// script.src = "https://kairong6.gitee.io/api/asteroids.js";
+				script.src = "https://ckr946.github.io/api/asteroids.js";
 				document.head.appendChild(script);
 			}
 		});
@@ -80,7 +81,8 @@ function loadWidget(config) {
 		});
 		document.querySelector("#waifu-tool .fa-info-circle").addEventListener("click", () => {
 			// open("https://github.com/stevenjoezhang/live2d-widget");
-			open("https://gitee.com/kairong6/kairong6/tree/master/live2d-widget");
+			// open("https://gitee.com/kairong6/kairong6/tree/master/live2d-widget");
+			open("https://github.com/ckr946/blog/tree/main/live2d-widget");
 		});
 		document.querySelector("#waifu-tool .fa-times").addEventListener("click", () => {
 			localStorage.setItem("waifu-display", Date.now());
