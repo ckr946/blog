@@ -19,13 +19,13 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"kairong6.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
+    var CONFIG = {"hostname":"ckr946.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
   </script>
 
   <meta name="description" content="代理模式的应用 对于上一章的事务管理的业务层进行代理模式的应用  建议将上一章“事务管理”的代码拷贝使用，引用测试二的案列  由于业务实现类中功能以及操作并不专一，也就是不纯净，这会使得耦合性提高  对于如何解耦提高类聚性，可考虑使用代理模式  代理模式分为静态代理和动态代理（jdk动态代理以及cgLib动态代理）  所谓代理模式就是将两个模块（纯净业务实现类、事务增强类）交由第三模块处理   静">
 <meta property="og:type" content="article">
 <meta property="og:title" content="代理模式">
-<meta property="og:url" content="https://kairong6.gitee.io/2022/04/05/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/index.html">
+<meta property="og:url" content="https://ckr946.github.io/2022/04/05/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="ckrの博客">
 <meta property="og:description" content="代理模式的应用 对于上一章的事务管理的业务层进行代理模式的应用  建议将上一章“事务管理”的代码拷贝使用，引用测试二的案列  由于业务实现类中功能以及操作并不专一，也就是不纯净，这会使得耦合性提高  对于如何解耦提高类聚性，可考虑使用代理模式  代理模式分为静态代理和动态代理（jdk动态代理以及cgLib动态代理）  所谓代理模式就是将两个模块（纯净业务实现类、事务增强类）交由第三模块处理   静">
 <meta property="og:locale" content="zh_CN">
@@ -39,7 +39,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://ckr666.oss-cn-chengdu.aliyuncs.com/img/20220406222444.png">
 
-<link rel="canonical" href="https://kairong6.gitee.io/2022/04/05/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/">
+<link rel="canonical" href="https://ckr946.github.io/2022/04/05/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/">
 
 
 <script id="page-configurations">
@@ -202,7 +202,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kairong6.gitee.io/2022/04/05/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="https://ckr946.github.io/2022/04/05/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/ckr.png">
@@ -258,7 +258,7 @@
         <h1 id="代理模式的应用"><a href="#代理模式的应用" class="headerlink" title="代理模式的应用"></a>代理模式的应用</h1><ul>
 <li><p>对于上一章的<strong>事务管理</strong>的业务层进行代理模式的应用</p>
 </li>
-<li><p>建议将上一章“<a href="https://kairong6.gitee.io/2022/04/05/%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/">事务管理</a>”的代码拷贝使用，引用测试二的案列</p>
+<li><p>建议将上一章“<a target="_blank" rel="noopener" href="https://kairong6.gitee.io/2022/04/05/%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/">事务管理</a>”的代码拷贝使用，引用测试二的案列</p>
 </li>
 <li><p>由于业务实现类中功能以及操作并不专一，也就是不纯净，这会使得耦合性提高</p>
 </li>
@@ -343,7 +343,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://kairong6.gitee.io/2022/04/05/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" title="代理模式">https://kairong6.gitee.io/2022/04/05/代理模式/</a>
+    <a href="https://ckr946.github.io/2022/04/05/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" title="代理模式">https://ckr946.github.io/2022/04/05/代理模式/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -502,7 +502,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
